@@ -551,12 +551,14 @@
             headers: { 'Accept': 'application/json' }
           });
 
+          const result = await res.json().catch(() => ({}));
+
           if (res.ok) {
             form.reset();
             status.textContent = 'Done. Your information was sent successfully.';
             status.style.color = '#7cf7bf';
           } else {
-            status.textContent = 'Something went wrong. Please try again.';
+            status.textContent = result.errors?.[0]?.message || 'Something went wrong. Please try again.';
             status.style.color = '#ff8b8b';
           }
         } catch (err) {
