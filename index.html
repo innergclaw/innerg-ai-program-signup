@@ -287,9 +287,19 @@
       font-size: 0.96rem;
     }
 
-    .info-item span {
+    .info-item span,
+    .info-item a {
       color: var(--muted);
       font-size: 0.92rem;
+    }
+
+    .info-item a {
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .info-item a:hover {
+      color: var(--blue-bright);
     }
 
     form {
@@ -558,7 +568,7 @@
           </div>
           <div class="info-item">
             <strong>YouTube</strong>
-            <span>@innergintel</span>
+            <a href="https://www.youtube.com/@innergintel" target="_blank" rel="noopener noreferrer">@innergintel</a>
           </div>
         </div>
       </article>
