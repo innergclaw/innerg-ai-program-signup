@@ -183,17 +183,25 @@
       overflow: hidden;
       border: 1px solid rgba(87,164,255,0.18);
       box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
-      background:
-        linear-gradient(180deg, rgba(5,10,18,0.12), rgba(5,10,18,0.42)),
-        url('innerg-program-classroom.jpg') center/top/cover no-repeat;
+      background: linear-gradient(180deg, rgba(8,14,28,0.16), rgba(8,14,28,0.4));
       min-height: 620px;
+    }
+
+    .hero-art img {
+      width: 100%;
+      height: 100%;
+      min-height: 620px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
     }
 
     .hero-art::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(7,14,28,0.05), rgba(7,14,28,0.58));
+      background: linear-gradient(180deg, rgba(7,14,28,0.02), rgba(7,14,28,0.42));
+      pointer-events: none;
     }
 
     .hero-overlay-card {
@@ -360,7 +368,8 @@
         grid-template-columns: 1fr;
       }
 
-      .hero-art {
+      .hero-art,
+      .hero-art img {
         min-height: 520px;
       }
     }
@@ -368,7 +377,8 @@
     @media (max-width: 640px) {
       .shell { width: min(100% - 18px, 1180px); }
       .hero-grid, .card { padding: 22px; }
-      .hero-art { min-height: 440px; }
+      .hero-art,
+      .hero-art img { min-height: 440px; }
       h1 { letter-spacing: -1.5px; }
     }
   </style>
@@ -405,6 +415,7 @@
         </div>
 
         <div class="hero-art">
+          <img src="innerg-program-classroom.jpg" alt="InnerG Intel AI Program classroom flyer art">
           <div class="hero-overlay-card">
             <h3>Program Window</h3>
             <p>Monday sessions start <strong>May 4</strong> and continue every Monday through <strong>September 1</strong>.</p>
