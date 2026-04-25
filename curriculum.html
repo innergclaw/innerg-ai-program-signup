@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InnerG AI Program — 18-Week Curriculum</title>
+  <meta name="description" content="Full 18-week curriculum for the InnerG Intel AI Program 2026. AI literacy from the ground up — Mondays 7:30–9:30 PM, May 4 through September 1.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050b16;
+      --bg-soft: #0a1324;
+      --panel: rgba(10, 18, 36, 0.88);
+      --panel-2: rgba(8, 14, 28, 0.94);
+      --line: rgba(87, 164, 255, 0.18);
+      --line-strong: rgba(87, 164, 255, 0.35);
+      --blue: #57a4ff;
+      --blue-bright: #6fd1ff;
+      --text: #f4f8ff;
+      --muted: #a7b8cf;
+      --success: #7cf7bf;
+      --shadow: 0 30px 80px rgba(0,0,0,0.45);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(87, 164, 255, 0.12), transparent 26%),
+        radial-gradient(circle at top right, rgba(111, 209, 255, 0.1), transparent 20%),
+        linear-gradient(180deg, #03070d 0%, #08101e 100%);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .grid-bg {
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(87,164,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(87,164,255,0.06) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: radial-gradient(circle at center, black 45%, transparent 95%);
+      pointer-events: none;
+      opacity: 0.35;
+    }
+
+    /* Nav */
+    .topnav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .topnav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-dot {
+      width: 36px;
+      height: 36px;
+      border: 2px solid var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .brand-dot::after {
+      content: '';
+      width: 12px;
+      height: 12px;
+      background: var(--blue);
+      border-radius: 3px;
+    }
+
+    .brand-text {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 2.5px;
+      color: var(--text);
+      text-transform: uppercase;
+    }
+
+    .topnav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .topnav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+
+    .topnav-links a:hover,
+    .topnav-links a.active {
+      color: var(--blue-bright);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--line-strong);
+      border-radius: 12px;
+      padding: 8px 10px;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .mobile-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 16px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      padding: 14px 20px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid var(--line);
+      transition: background 0.2s;
+    }
+
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { background: rgba(87,164,255,0.08); }
+
+    /* Shell */
+    .shell {
+      width: min(1180px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 0 0 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    .page-header {
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(12, 20, 39, 0.95), rgba(6, 11, 22, 0.92));
+      border-radius: 30px;
+      padding: 40px 34px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, transparent, rgba(111,209,255,0.06), transparent),
+        radial-gradient(circle at 30% 50%, rgba(87,164,255,0.1), transparent 50%);
+      pointer-events: none;
+    }
+
+    .page-header-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-header .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line-strong);
+      background: rgba(87,164,255,0.08);
+      color: var(--blue-bright);
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .page-header .eyebrow::before {
+      content: '◉';
+      color: var(--blue);
+      font-size: 11px;
+    }
+
+    .page-header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1;
+      letter-spacing: -1.5px;
+      margin-bottom: 14px;
+    }
+
+    .page-header p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 70ch;
+    }
+
+    /* Schedule bar */
+    .schedule-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .schedule-item {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(10,18,36,0.9), rgba(6,11,22,0.94));
+      border-radius: 18px;
+      padding: 18px 20px;
+      text-align: center;
+    }
+
+    .schedule-item strong {
+      display: block;
+      color: var(--blue-bright);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      margin-bottom: 6px;
+    }
+
+    .schedule-item span {
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    /* Session structure */
+    .structure-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(12, 20, 39, 0.95), rgba(6, 11, 22, 0.92));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-bottom: 32px;
+    }
+
+    .structure-card h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .structure-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .structure-table th,
+    .structure-table td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid rgba(87,164,255,0.1);
+    }
+
+    .structure-table th {
+      color: var(--blue-bright);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+      font-weight: 700;
+    }
+
+    .structure-table td {
+      font-size: 0.92rem;
+    }
+
+    .structure-table td:first-child {
+      color: var(--blue-bright);
+      font-weight: 700;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+
+    .structure-table td:last-child {
+      color: var(--muted);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .structure-table tr:last-child td { border-bottom: none; }
+
+    /* Phase */
+    .phase {
+      margin-bottom: 36px;
+    }
+
+    .phase-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .phase-number {
+      width: 48px;
+      height: 48px;
+      border: 2px solid var(--blue);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--blue-bright);
+      flex-shrink: 0;
+    }
+
+    .phase-title-block h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.35rem;
+      letter-spacing: -0.5px;
+      margin-bottom: 2px;
+    }
+
+    .phase-subtitle {
+      color: var(--blue-bright);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    /* Week cards */
+    .week-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(10,18,36,0.9), rgba(6,11,22,0.94));
+      border-radius: 22px;
+      padding: 24px 26px;
+      margin-bottom: 16px;
+      transition: border-color 0.3s;
+    }
+
+    .week-card:hover {
+      border-color: var(--line-strong);
+    }
+
+    .week-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .week-label {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .week-date {
+      font-size: 0.82rem;
+      color: var(--blue-bright);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .week-topic {
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.3px;
+    }
+
+    .week-blocks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .week-block {
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .week-block h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+      color: var(--blue-bright);
+      margin-bottom: 8px;
+      font-weight: 800;
+    }
+
+    .week-block ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .week-block li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 5px;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .week-block li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-size: 0.8rem;
+    }
+
+    .week-qa {
+      grid-column: 1 / -1;
+      padding: 12px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(124, 247, 191, 0.15);
+      background: rgba(124, 247, 191, 0.04);
+    }
+
+    .week-qa h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+      color: var(--success);
+      margin-bottom: 4px;
+      font-weight: 800;
+    }
+
+    .week-qa p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* Deliverables */
+    .deliverables {
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(12, 20, 39, 0.95), rgba(6, 11, 22, 0.92));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-top: 36px;
+    }
+
+    .deliverables h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .deliverables p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .deliverable-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .deliverable-item {
+      padding: 16px 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .deliverable-item strong {
+      display: block;
+      color: var(--blue-bright);
+      font-size: 0.92rem;
+      margin-bottom: 4px;
+    }
+
+    .deliverable-item span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    /* Footer */
+    .page-footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .page-footer p {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .page-footer a {
+      color: var(--blue-bright);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .page-footer a:hover { text-decoration: underline; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .topnav-links { display: none; }
+      .mobile-toggle { display: flex; }
+      .shell { width: min(100% - 18px, 1180px); }
+      .page-header, .structure-card, .week-card, .deliverables { padding: 20px; }
+      .week-blocks { grid-template-columns: 1fr; }
+      .structure-table { font-size: 0.85rem; }
+      .structure-table td:first-child { font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="shell">
+
+    <!-- Nav -->
+    <nav class="topnav">
+      <a href="index.html" class="topnav-brand">
+        <div class="brand-dot"></div>
+        <span class="brand-text">InnerG Intel</span>
+      </a>
+      <div class="topnav-links">
+        <a href="index.html">Sign Up</a>
+        <a href="curriculum.html" class="active">Curriculum</a>
+      </div>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Sign Up</a>
+      <a href="curriculum.html">Curriculum</a>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="page-header-inner">
+        <div class="eyebrow">18 Weeks · Every Monday · 7:30–9:30 PM</div>
+        <h1>Program Curriculum</h1>
+        <p>From "what is AI?" to running your own AI agent. 18 weeks of hands-on learning designed for real people — not engineers. May 4 through September 1, 2026.</p>
+      </div>
+    </section>
+
+    <!-- Schedule Bar -->
+    <div class="schedule-bar">
+      <div class="schedule-item">
+        <strong>Start Date</strong>
+        <span>May 4, 2026</span>
+      </div>
+      <div class="schedule-item">
+        <strong>End Date</strong>
+        <span>September 1, 2026</span>
+      </div>
+      <div class="schedule-item">
+        <strong>Day</strong>
+        <span>Every Monday</span>
+      </div>
+      <div class="schedule-item">
+        <strong>Time</strong>
+        <span>7:30 – 9:30 PM</span>
+      </div>
+      <div class="schedule-item">
+        <strong>Sessions</strong>
+        <span>18 Weeks</span>
+      </div>
+    </div>
+
+    <!-- Session Structure -->
+    <div class="structure-card">
+      <h2>Each Session — 2 Hours</h2>
+      <table class="structure-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Block</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>7:30 PM</td>
+            <td><strong>Check-in &amp; Recap</strong> — last week's takeaways, quick hits</td>
+            <td>10 min</td>
+          </tr>
+          <tr>
+            <td>7:40 PM</td>
+            <td><strong>Core Lesson</strong> — tonight's concept, plain language</td>
+            <td>35 min</td>
+          </tr>
+          <tr>
+            <td>8:15 PM</td>
+            <td><strong>Break</strong></td>
+            <td>10 min</td>
+          </tr>
+          <tr>
+            <td>8:25 PM</td>
+            <td><strong>Hands-on Lab</strong> — try it yourself, guided exercise</td>
+            <td>40 min</td>
+          </tr>
+          <tr>
+            <td>9:05 PM</td>
+            <td><strong>Open Q&amp;A &amp; Discussion</strong> — questions, thoughts, getting comfortable with AI</td>
+            <td>20 min</td>
+          </tr>
+          <tr>
+            <td>9:25 PM</td>
+            <td><strong>Wrap-up</strong> — homework, next week preview</td>
+            <td>5 min</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Phase 1 -->
+    <section class="phase">
+      <div class="phase-header">
+        <div class="phase-number">1</div>
+        <div class="phase-title-block">
+          <h2>Foundation</h2>
+          <div class="phase-subtitle">Weeks 1–4 · Understand AI</div>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-top">
+          <span class="week-label">Week 1</span>
+          <span class="week-date">May 4</span>
+        </div>
+        <div class="week-topic">AI Is Already Here</div>
+        <div class="week-blocks">
+          <div class="week-block">
+            <h4>Core Lesson</h4>
+            <ul>
+              <li>What AI actually is vs. what people think it is</li>
+              <li>How AI is already in your phone, apps, school, work</li>
+              <li>Shape it or be shaped by it?</li>
+              <li>Icebreaker: "What's one way you've used AI without knowing it?"</li>
+            </ul>
+          </div>
+          <div class="week-block">
+            <h4>Hands-on Lab</h4>
+            <ul>
+              <li>Open ChatGPT, Claude, or Gemini for the first time</li>
+              <li>Send your first message — introduce yourself to AI</li>
+              <li>See how it responds, ask a follow-up</li>
+            </ul>
+          </div>
+          <div class="week-qa">
+            <h4>Q&amp;A Focus</h4>
+            <p>Fears, skepticism, "is AI going to take my job?"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-top">
+          <span class="week-label">Week 2</span>
+          <span class="week-date">May 11</span>
+        </div>
+        <div class="week-topic">How AI Works (Plain English)</div>
+        <div class="week-blocks">
+          <div class="week-block">
+            <h4>Core Lesson</h4>
+            <ul>
+              <li>LLMs, training data, pattern recognition — no code needed</li>
+              <li>Why AI sometimes gets it wrong (hallucinations, bias)</li>
+              <li>AI vs. machine learning vs. automation</li>
+              <li>Analogy: AI as super-powered autocomplete, not a brain</li>
+            </ul>
+          </div>
+          <div class="week-block">
+            <h4>Hands-on Lab</h4>
+            <ul>
+              <li>Test AI's limits: ask about your neighborhood</li>
+              <li>Spot the hallucination — compare AI output to real facts</li>
+              <li>Group exercise: "catch the AI lying"</li>
+            </ul>
+          </div>
+          <div class="week-qa">
+            <h4>Q&amp;A Focus</h4>
+            <p>"How can I trust it?", "Is it always right?"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-top">
+          <span class="week-label">Week 3</span>
+          <span class="week-date">May 18</span>
+        </div>
+        <div class="week-topic">The Big 3 — ChatGPT, Claude, Gemini</div>
+        <div class="week-blocks">
+          <div class="week-block">
+            <h4>Core Lesson</h4>
+            <ul>
+              <li>What each one does best</li>
+              <li>When to use which one</li>
+              <li>Strengths and weaknesses of each platform</li>
+              <li>Free vs. paid — what you actually need</li>
+            </ul>
+          </div>
+          <div class="week-block">
+            <h4>Hands-on Lab</h4>
+            <ul>
+              <li>Same prompt across all three platforms</li>
+              <li>Compare outputs side by side</li>
+              <li>Find your preferred tool and explain why</li>
+            </ul>
+          </div>
+          <div class="week-qa">
+            <h4>Q&amp;A Focus</h4>
+            <p>"Which one should I use?", "Is one smarter than the others?"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-top">
+          <span class="week-label">Week 4</span>
+          <span class="week-date">May 25</span>
+        </div>
+        <div class="week-topic">Prompt Engineering 101</div>
+        <div class="week-blocks">
+          <div class="week-block">
+            <h4>Core Lesson</h4>
+            <ul>
+              <li>Why your prompt matters more than the tool</li>
+              <li>Structure: context → task → format → tone</li>
+              <li>Common mistakes people make when talking to AI</li>
+              <li>Prompt vs. conversation — the difference</li>
+            </ul>
+          </div>
+          <div class="week-block">
+            <h4>Hands-on Lab</h4>
+            <ul>
+              <li>Rewrite 5 bad prompts into great ones</li>
+              <li>Test your prompts live and compare results</li>
+              <li>Challenge: get AI to write exactly what you want in one try</li>
+            </ul>
+          </div>
+          <div class="week-qa">
+            <h4>Q&amp;A Focus</h4>
+            <p>"Why didn't it give me what I wanted?", prompt struggles</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Phase 2 -->
+    <section class="phase">
+      <div class="phase-header">
+        <div class="phase-number">2</div>
+        <div class="phase-title-block">
+          <h2>Exploration</h2>
+          <div class="phase-subtitle">Weeks 5–8 · Explore Tools</div>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-top">
+          <span class="week-label">Week 5</span>
+          <span class="week-date">Jun 1</span>
+        </div>
+        <div class="week-topic">AI for Writing &amp; Content</div>
+        <div class="week-blocks">
+          <div class="week-block">
+            <h4>Core Lesson</h4>
+            <ul>
+              <li>Emails, essays, social media, resumes</li>
+              <li>When AI helps vs. when it hurts your voice</li>
+              <li>The line between assistance and replacement</li>
+              <li>Keeping your authenticity while using AI</li>
+            </ul>
+          </div>
+          <div class="week-block">
+            <h4>Hands-on Lab</h4>
+            <ul>
+              <li>Write a professional email using AI</li>
+              <li>Create a social media post in your own voice</li>
+              <li>Redraft a resume bullet point with AI help</li>
+            </ul>
+          </div>
+          <div class="week-qa">
+            <h4>Q&amp;A Focus</h4>
+            <p>"Does using AI for writing count as cheating?", "How do I keep it sounding like me?"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-top">
+          <span class="week-label">Week 6</span>
+          <span class="week-date">Jun 8</span>
+        </div>
+        <div class="week-topic">AI for Research &amp; Learning</div>
+        <div class="week-blocks">
+          <div class="week-block">
+            <h4>Core Lesson</h4>
+            <ul>
+              <li>Summarizing articles, studying, breaking down complex topics</li>
+              <li>Fact-checking AI output — why you must verify</li>
+              <li>Using AI as a tutor, not an answer key</li>
+              <li>Building a study workflow with AI</li>
+            </ul>
+          </div>
+          <div class="week-block">
+            <h4>Hands-on Lab</h4>
+            <ul>
+              <li>Pick a topic you don't know, learn it with AI in 15 min</li>
+              <li>Verify 3 claims AI made using real sources</li>
+              <li>Create a study guide for a current subject</li>
+            </ul>
+          </div>
+          <div class="week-qa">
+            <h4>Q&amp;A Focus</h4>
+            <p>"How do I know if the AI is giving me real info?", research frustrations</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-top">
+          <span class="week-label">Week 7</span>
+          <span class="week-date">Jun 15</span>
+        </div>
+        <div class="week-topic">AI Images, Video &amp; Creative Tools</div>
+        <div class="week-blocks">
+          <div class="week-block">
+            <h4>Core Lesson</h4>
+            <ul>
+              <li>Image generation, voice, video — what's real and what's AI</li>
+              <li>Ethics of AI-generated content</li>
+              <li>Copyright, ownership, and giving credit</li>
+              <li>The creative industry in the AI era</li>
+            </ul>
+          </div>
+          <div class="week-block">
+            <h4>Hands-on Lab</h4>
+            <ul>
+              <li>Generate an image from a text prompt</li>
+              <li>Create a short video or animation using AI</li>
+              <li>Group challenge: spot the AI-generated images</li>
+            </ul>
+          </div>
+          <div class="week-qa">
+            <h4>Q&amp;A Focus</h4>
+            <p>"Is AI art real art?", "What about deepfakes?", creative concerns</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-top">
+          <span class="week-label">Week 8</span>
+          <span class="week-date">Jun 22</span>
+        </div>
+        <div class="week-topic">AI for Productivity &amp; Organization</div>
+        <div class="week-blocks">
+          <div class="week-block">
+            <h4>Core Lesson</h4>
+            <ul>
+              <li>Calendars, to-do lists, scheduling, note-taking</li>
+              <li>Building a personal AI workflow</li>
+              <li>Automating the boring stuff</li>
+              <li>Time management with AI assistance</li>
+            </ul>
+          </div>
+          <div class="week-block">
+            <h4>Hands-on Lab</h4>
+            <ul>
+              <li>Design your AI-powered daily routine</li>
+              <li>Set up an AI-assisted to-do system</li>
+              <li>Create a weekly planner using AI prompts</li>
+            </ul>
+          </div>
+          <div class="week-qa">
+            <h4>Q&amp;A Focus</h4>
+            <p>"How do I not become dependent?", "What if AI messes up my schedule?"</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Phase 3 -->
+    <section class="phase">
+      <div class="phase-header">
+        <div class="phase-number">3</div>
+        <div class="phase-title-block">
+          <h2>Application</h2>
+          <div class="phase-subtitle">Weeks 9–13 · Gain the Advantage</div>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-top">
+          <span class="week-label">Week 9</span>
+          <span class="week-date">Jun 29</span>
+        </div>
+        <div class="week-topic">AI in School &amp; Academics</div>
+        <div class="week-blocks">
+          <div class="week-block">
+            <h4>Core Lesson</h4>
+            <ul>
+              <li>Using AI to study, not cheat</li>
+              <li>How teachers and schools are adapting</li>
+              <li>Academic integrity in the AI era</li>
+              <li>When AI is a tool vs. when it's a shortcut</li>
+            </ul>
+          </div>
+          <div class="week-block">
+            <h4>Hands-on Lab</h4>
+            <ul>
+              <li>Break down a complex reading with AI</li>
+              <li>Create flashcards or a study plan with AI</li>
+              <li>Practice ethical AI use in an academic scenario</li>
+            </ul>
+          </div>
+          <div class="week-qa">
+            <h4>Q&amp;A Focus</h4>
+            <p>"Where's the line?", "What do teachers actually think about AI?"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-top">
+          <span class="week-label">Week 10</span>
+          <span class="week-date">Jul 6</span>
+        </div>
+        <div class="week-topic">AI in the Workplace</div>
+        <div class="week-blocks">
+          <div class="week-block">
+            <h4>Core Lesson</h4>
+            <ul>
+              <li>How jobs are changing — what's automated, what's not</li>
+              <li>AI as a skill on your resume</li>
+              <li>Positioning yourself for an AI-driven job market</li>
+              <li>Jobs that will grow, jobs that will shift</li>
+            </ul>
+          </div>
+          <div class="week-block">
+            <h4>Hands-on Lab</h4>
+            <ul>
+              <li>Identify 3 AI skills for your career path</li>
+              <li>Use AI to improve a real work sample</li>
+              <li>Draft an "AI-literate" resume bullet point</li>
+            </ul>
+          </div>
+          <div class="week-qa">
+            <h4>Q&amp;A Focus</h4>
+            <p>Job anxiety, career pivots, "should I learn to code?"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-top">
+          <span class="week-label">Week 11</span>
+          <span class="week-date">Jul 13</span>
+        </div>
+        <div class="week-topic">Intro to AI Agents</div>
+        <div class="week-blocks">
+          <div class="week-block">
+            <h4>Core Lesson</h4>
+            <ul>
+              <li>Beyond chatbots — AI that does things</li>
+              <li>What are agents? (tools, memory, autonomy)</li>
+              <li>The agent stack: instructions + tools + memory</li>
+              <li>Real-world agent examples</li>
+            </ul>
+          </div>
+          <div class="week-block">
+            <h4>Hands-on Lab</h4>
+            <ul>
+              <li>Live demo: OpenClaw agent in action</li>
+              <li>Watch an agent send emails, check calendars, do research</li>
+              <li>Brainstorm what your own agent could do</li>
+            </ul>
+          </div>
+          <div class="week-qa">
+            <h4>Q&amp;A Focus</h4>
+            <p>"Is this Skynet?", "Can I actually build one?", excitement vs. fear</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-top">
+          <span class="week-label">Week 12</span>
+          <span class="week-date">Jul 20</span>
+        </div>
+        <div class="week-topic">Building Your Own AI Workflow</div>
+        <div class="week-blocks">
+          <div class="week-block">
+            <h4>Core Lesson</h4>
+            <ul>
+              <li>Pick a real task you do every week</li>
+              <li>Map it: what AI can handle, what you still own</li>
+              <li>Designing a workflow that saves time without losing quality</li>
+              <li>Testing and iterating your workflow</li>
+            </ul>
+          </div>
+          <div class="week-block">
+            <h4>Hands-on Lab</h4>
+            <ul>
+              <li>Map out a personal workflow on paper</li>
+              <li>Build a simple agent workflow step by step</li>
+              <li>Test it, identify gaps, improve it</li>
+            </ul>
+          </div>
+          <div class="week-qa">
+            <h4>Q&amp;A Focus</h4>
+            <p>Workflow ideas, troubleshooting, "how do I know if it's working?"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-top">
+          <span class="week-label">Week 13</span>
+          <span class="week-date">Jul 27</span>
+        </div>
+        <div class="week-topic">AI for Entrepreneurs &amp; Side Hustles</div>
+        <div class="week-blocks">
+          <div class="week-block">
+            <h4>Core Lesson</h4>
+            <ul>
+              <li>Using AI to start or grow a business</li>
+              <li>Content, outreach, customer service, branding</li>
+              <li>Real examples from the InnerG Intel ecosystem</li>
+              <li>AI as a co-founder, not a replacement</li>
+            </ul>
+          </div>
+          <div class="week-block">
+            <h4>Hands-on Lab</h4>
+            <ul>
+              <li>Brainstorm a business idea with AI</li>
+              <li>Generate a brand identity (name, tagline, content)</li>
+              <li>Create a one-page business plan with AI</li>
+            </ul>
+          </div>
+          <div class="week-qa">
+            <h4>Q&amp;A Focus</h4>
+            <p>"Can AI run my business?", side hustle strategies, business ideas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Phase 4 -->
+    <section class="phase">
+      <div class="phase-header">
+        <div class="phase-number">4</div>
+        <div class="phase-title-block">
+          <h2>Readiness</h2>
+          <div class="phase-subtitle">Weeks 14–18 · Move With Intention</div>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-top">
+          <span class="week-label">Week 14</span>
+          <span class="week-date">Aug 3</span>
+        </div>
+        <div class="week-topic">AI Safety, Privacy &amp; Mental Health</div>
+        <div class="week-blocks">
+          <div class="week-block">
+            <h4>Core Lesson</h4>
+            <ul>
+              <li>What data AI collects and how to protect yourself</li>
+              <li>Deepfakes, scams, and misinformation</li>
+              <li>Mental safety in a fast-changing landscape</li>
+              <li>Setting boundaries with AI in your daily life</li>
+            </ul>
+          </div>
+          <div class="week-block">
+            <h4>Hands-on Lab</h4>
+            <ul>
+              <li>Audit your own AI data footprint</li>
+              <li>Learn to spot a deepfake or AI scam</li>
+              <li>Create a personal AI safety checklist</li>
+            </ul>
+          </div>
+          <div class="week-qa">
+            <h4>Q&amp;A Focus</h4>
+            <p>Privacy concerns, "is AI listening to me?", mental health and tech overload</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-top">
+          <span class="week-label">Week 15</span>
+          <span class="week-date">Aug 10</span>
+        </div>
+        <div class="week-topic">Critical Thinking in an AI World</div>
+        <div class="week-blocks">
+          <div class="week-block">
+            <h4>Core Lesson</h4>
+            <ul>
+              <li>How to question AI output</li>
+              <li>Spotting AI-generated content in the wild</li>
+              <li>Building a filter: trust but verify</li>
+              <li>Media literacy in the age of AI</li>
+            </ul>
+          </div>
+          <div class="week-block">
+            <h4>Hands-on Lab</h4>
+            <ul>
+              <li>Evaluate 10 pieces of content: real or AI?</li>
+              <li>Practice verifying claims across sources</li>
+              <li>Build a personal fact-checking workflow</li>
+            </ul>
+          </div>
+          <div class="week-qa">
+            <h4>Q&amp;A Focus</h4>
+            <p>Trust, skepticism, "how do I know what's real anymore?"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-top">
+          <span class="week-label">Week 16</span>
+          <span class="week-date">Aug 17</span>
+        </div>
+        <div class="week-topic">The Future of AI — What's Coming Next</div>
+        <div class="week-blocks">
+          <div class="week-block">
+            <h4>Core Lesson</h4>
+            <ul>
+              <li>Trends, new tools, and where this is heading</li>
+              <li>Why adaptability matters more than any single tool</li>
+              <li>Preparing for what doesn't exist yet</li>
+              <li>AI literacy as a lifelong practice</li>
+            </ul>
+          </div>
+          <div class="week-block">
+            <h4>Hands-on Lab</h4>
+            <ul>
+              <li>Research an emerging AI tool or trend</li>
+              <li>Present a 2-minute "future pitch" to the class</li>
+              <li>Write a letter to your future self about AI readiness</li>
+            </ul>
+          </div>
+          <div class="week-qa">
+            <h4>Q&amp;A Focus</h4>
+            <p>Hopes, fears, excitement about the future, final reflections</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-top">
+          <span class="week-label">Week 17</span>
+          <span class="week-date">Aug 24</span>
+        </div>
+        <div class="week-topic">Capstone — Your AI Action Plan</div>
+        <div class="week-blocks">
+          <div class="week-block">
+            <h4>Core Lesson</h4>
+            <ul>
+              <li>Review of the full program</li>
+              <li>How to build your personal AI strategy</li>
+              <li>Presenting with confidence</li>
+            </ul>
+          </div>
+          <div class="week-block">
+            <h4>Hands-on Lab</h4>
+            <ul>
+              <li>Each student presents their AI Action Plan</li>
+              <li>What they learned, what tools they'll use</li>
+              <li>How they'll apply AI in school/work/life</li>
+              <li>Personal boundaries with AI</li>
+            </ul>
+          </div>
+          <div class="week-qa">
+            <h4>Q&amp;A Focus</h4>
+            <p>Peer feedback, encouragement, open discussion about the journey</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-top">
+          <span class="week-label">Week 18</span>
+          <span class="week-date">Sep 1</span>
+        </div>
+        <div class="week-topic">Graduation &amp; Next Steps</div>
+        <div class="week-blocks">
+          <div class="week-block">
+            <h4>Core Lesson</h4>
+            <ul>
+              <li>Program recap and highlights</li>
+              <li>Certificates of completion</li>
+              <li>Resources for continued learning</li>
+              <li>InnerG Intel community &amp; ongoing support</li>
+            </ul>
+          </div>
+          <div class="week-block">
+            <h4>Hands-on Lab</h4>
+            <ul>
+              <li>Finalize and share your AI Action Plan</li>
+              <li>Exchange contact info with classmates</li>
+              <li>Explore InnerG Intel community resources</li>
+            </ul>
+          </div>
+          <div class="week-qa">
+            <h4>Q&amp;A Focus</h4>
+            <p>What's next, staying connected, final questions, closing thoughts</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deliverables -->
+    <section class="deliverables">
+      <h2>What You'll Leave With</h2>
+      <p>Every student completes the program with real tools they can use immediately.</p>
+      <div class="deliverable-grid">
+        <div class="deliverable-item">
+          <strong>📝 Prompt Cheat Sheet</strong>
+          <span>Go-to prompts for school, work, and life</span>
+        </div>
+        <div class="deliverable-item">
+          <strong>⚙️ Personal AI Workflow</strong>
+          <span>A system you actually use day to day</span>
+        </div>
+        <div class="deliverable-item">
+          <strong>🗺️ AI Action Plan</strong>
+          <span>Your personalized roadmap going forward</span>
+        </div>
+        <div class="deliverable-item">
+          <strong>📚 Resource Guide</strong>
+          <span>Tools, links, and continued learning paths</span>
+        </div>
+        <div class="deliverable-item">
+          <strong>🏆 Certificate of Completion</strong>
+          <span>InnerG Intel AI Program 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="page-footer">
+      <p>Instructor: <a href="mailto:nasirr@innergintel.org">Nasirr Mayo</a> · InnerG Intel</p>
+      <p><a href="index.html">← Back to Sign Up</a></p>
+    </div>
+
+  </div>
+
+  <script>
+    const toggle = document.getElementById('mobileToggle');
+    const menu = document.getElementById('mobileMenu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
