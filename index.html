@@ -649,6 +649,39 @@
     @media (max-width: 640px) {
       .pricing-grid { grid-template-columns: 1fr; }
     }
+
+    /* Back to top */
+    .back-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #000;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 20px rgba(87,164,255,0.3);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s, transform 0.3s, background 0.2s;
+      pointer-events: none;
+      z-index: 100;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .back-to-top:hover {
+      background: var(--blue-bright);
+      transform: translateY(-3px);
+    }
   </style>
 </head>
 <body>
@@ -953,6 +986,8 @@
     </div>
   </main>
 
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
   <script>
     const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mreaqkdr';
 
@@ -998,6 +1033,15 @@
     const menu = document.getElementById('mobileMenu');
     toggle.addEventListener('click', () => {
       menu.classList.toggle('open');
+    });
+
+    // Back to top button
+    const btt = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      btt.classList.toggle('visible', window.scrollY > 400);
+    });
+    btt.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
