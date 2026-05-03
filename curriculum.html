@@ -52,6 +52,61 @@
     }
 
     /* Nav */
+    .follow-banner {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+      margin: 18px auto 8px;
+      padding: 0 14px;
+    }
+
+    .follow-banner a {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line-strong);
+      background: rgba(87,164,255,0.08);
+      color: var(--text);
+      text-decoration: none;
+      box-shadow: 0 16px 36px rgba(0,0,0,0.28);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .follow-banner a:hover {
+      transform: translateY(-1px);
+      border-color: rgba(111, 209, 255, 0.55);
+      background: rgba(87,164,255,0.14);
+    }
+
+    .follow-banner-copy {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .follow-banner-label {
+      font-size: 0.68rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue-bright);
+      font-weight: 800;
+    }
+
+    .follow-banner-handle {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .follow-banner-icon {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 20px;
+    }
+
     .topnav {
       display: flex;
       align-items: center;
@@ -555,6 +610,16 @@
     @media (max-width: 768px) {
       .topnav-links { display: none; }
       .mobile-toggle { display: flex; }
+      .follow-banner a {
+        width: 100%;
+        justify-content: center;
+      }
+      .follow-banner-label {
+        font-size: 0.64rem;
+      }
+      .follow-banner-handle {
+        font-size: 0.9rem;
+      }
       .shell { width: min(100% - 18px, 1180px); }
       .page-header, .structure-card, .week-card, .deliverables { padding: 20px; }
       .week-blocks { grid-template-columns: 1fr; }
@@ -598,6 +663,19 @@
 </head>
 <body>
   <div class="grid-bg"></div>
+  <div class="follow-banner">
+    <a href="https://instagram.com/innergintelprogram" target="_blank" rel="noopener noreferrer" aria-label="Follow InnerG Intel Program on Instagram">
+      <svg class="follow-banner-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"></rect>
+        <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"></circle>
+        <circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"></circle>
+      </svg>
+      <span class="follow-banner-copy">
+        <span class="follow-banner-label">FOLLOW PROGRAM ONLINE</span>
+        <span class="follow-banner-handle">@innergintelprogram</span>
+      </span>
+    </a>
+  </div>
   <div class="shell">
 
     <!-- Nav -->
