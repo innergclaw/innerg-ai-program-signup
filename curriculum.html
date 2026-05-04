@@ -3,628 +3,441 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>InnerG AI Program ~ 18-Week Curriculum</title>
-  <meta name="description" content="Full 18-week curriculum for the InnerG Intel AI Program 2026. AI literacy from the ground up ~ Mondays 7:30~9:30 PM, May 4 through September 1.">
+  <title>InnerG Intelligence Program 2026 — Full Curriculum</title>
+  <meta name="description" content="Full 18-week curriculum for the InnerG Intelligence Program 2026. AI literacy for students, parents, families, and professionals. Every Monday, May 4 through September 1.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #050b16;
-      --bg-soft: #0a1324;
-      --panel: rgba(10, 18, 36, 0.88);
-      --panel-2: rgba(8, 14, 28, 0.94);
-      --line: rgba(87, 164, 255, 0.18);
-      --line-strong: rgba(87, 164, 255, 0.35);
-      --blue: #57a4ff;
-      --blue-bright: #6fd1ff;
-      --text: #f4f8ff;
-      --muted: #a7b8cf;
-      --success: #7cf7bf;
-      --shadow: 0 30px 80px rgba(0,0,0,0.45);
-      --radius: 24px;
+      --bg-dark: #050716;
+      --bg-navy: #15245c;
+      --neon-pink: #ff2bd6;
+      --cyan: #00e5ff;
+      --yellow: #ffe600;
+      --electric-blue: #2d5bff;
+      --white: #ffffff;
+      --panel-bg: rgba(10, 14, 40, 0.85);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Inter', sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(87, 164, 255, 0.12), transparent 26%),
-        radial-gradient(circle at top right, rgba(111, 209, 255, 0.1), transparent 20%),
-        linear-gradient(180deg, #03070d 0%, #08101e 100%);
-      color: var(--text);
-      min-height: 100vh;
-      line-height: 1.6;
+      background: radial-gradient(circle at top, #15245c, #050716 55%, #02030a);
+      color: var(--white);
       overflow-x: hidden;
-    }
-
-    .grid-bg {
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(87,164,255,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(87,164,255,0.06) 1px, transparent 1px);
-      background-size: 36px 36px;
-      mask-image: radial-gradient(circle at center, black 45%, transparent 95%);
-      pointer-events: none;
-      opacity: 0.35;
-    }
-
-    /* Nav */
-    .follow-banner {
-      display: flex;
-      justify-content: center;
-      position: relative;
-      z-index: 2;
-      margin: 18px auto 8px;
-      padding: 0 14px;
-    }
-
-    .follow-banner a {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      border: 1px solid var(--line-strong);
-      background: rgba(87,164,255,0.08);
-      color: var(--text);
-      text-decoration: none;
-      box-shadow: 0 16px 36px rgba(0,0,0,0.28);
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-    }
-
-    .follow-banner a:hover {
-      transform: translateY(-1px);
-      border-color: rgba(111, 209, 255, 0.55);
-      background: rgba(87,164,255,0.14);
-    }
-
-    .follow-banner-copy {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-
-    .follow-banner-label {
-      font-size: 0.68rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--blue-bright);
-      font-weight: 800;
-    }
-
-    .follow-banner-handle {
-      font-size: 0.98rem;
-      font-weight: 800;
-      color: var(--text);
-    }
-
-    .follow-banner-icon {
-      width: 20px;
-      height: 20px;
-      flex: 0 0 20px;
-    }
-
-    .topnav {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 36px;
-      padding: 18px 0;
-      margin-bottom: 8px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .topnav-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-
-    .brand-dot {
-      width: 36px;
-      height: 36px;
-      border: 2px solid var(--blue);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
       position: relative;
     }
 
-    .brand-dot::after {
+    /* Halftone overlay */
+    body::before {
       content: '';
-      width: 12px;
-      height: 12px;
-      background: var(--blue);
-      border-radius: 3px;
-    }
-
-    .brand-text {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.82rem;
-      letter-spacing: 2.5px;
-      color: var(--text);
-      text-transform: uppercase;
-    }
-
-    .topnav-links {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .topnav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      transition: color 0.2s;
-    }
-
-    .topnav-links a:hover,
-    .topnav-links a.active {
-      color: var(--blue-bright);
-    }
-
-    .mobile-toggle {
-      display: none;
-      background: none;
-      border: 1px solid var(--line-strong);
-      border-radius: 12px;
-      padding: 8px 10px;
-      cursor: pointer;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .mobile-toggle span {
-      display: block;
-      width: 18px;
-      height: 2px;
-      background: var(--text);
-      border-radius: 2px;
-    }
-
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      gap: 0;
-      margin-bottom: 16px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      overflow: hidden;
-      position: relative;
-      z-index: 2;
-    }
-
-    .mobile-menu.open { display: flex; }
-
-    .mobile-menu a {
-      padding: 14px 20px;
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 600;
-      border-bottom: 1px solid var(--line);
-      transition: background 0.2s;
-    }
-
-    .mobile-menu a:last-child { border-bottom: none; }
-    .mobile-menu a:hover { background: rgba(87,164,255,0.08); }
-
-    /* Shell */
-    .shell {
-      width: min(1180px, calc(100% - 28px));
-      margin: 0 auto;
-      padding: 0 0 60px;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Header */
-    .page-header {
-      border: 1px solid var(--line);
-      background: linear-gradient(145deg, rgba(12, 20, 39, 0.95), rgba(6, 11, 22, 0.92));
-      border-radius: 30px;
-      padding: 40px 34px;
-      box-shadow: var(--shadow);
-      margin-bottom: 24px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .page-header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, transparent, rgba(111,209,255,0.06), transparent),
-        radial-gradient(circle at 30% 50%, rgba(87,164,255,0.1), transparent 50%);
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 4px 4px;
       pointer-events: none;
+      z-index: 9998;
     }
 
-    .page-header-inner {
+    /* Vintage poster border */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border: 8px solid rgba(255,230,0,0.12);
+      border-image: linear-gradient(135deg, rgba(255,43,214,0.15), rgba(0,229,255,0.15), rgba(255,230,0,0.1), rgba(45,91,255,0.15)) 1;
+      pointer-events: none;
+      z-index: 9997;
+    }
+
+    /* Stars background */
+    .stars {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .star {
+      position: absolute;
+      width: 2px; height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 3s infinite alternate;
+    }
+    @keyframes twinkle { 0% { opacity: 0.2; } 100% { opacity: 0.8; } }
+
+    /* Synthwave grid */
+    .synth-grid {
+      position: fixed;
+      bottom: 0; left: -50%; right: -50%;
+      height: 45vh;
+      background:
+        linear-gradient(transparent 0%, rgba(0,229,255,0.03) 100%),
+        repeating-linear-gradient(90deg, rgba(0,229,255,0.06) 0px, rgba(0,229,255,0.06) 1px, transparent 1px, transparent 80px),
+        repeating-linear-gradient(0deg, rgba(0,229,255,0.06) 0px, rgba(0,229,255,0.06) 1px, transparent 1px, transparent 80px);
+      transform: perspective(500px) rotateX(60deg);
+      transform-origin: bottom center;
+      pointer-events: none;
+      z-index: 0;
+      mask-image: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+      -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
       position: relative;
       z-index: 1;
     }
 
-    .page-header .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--line-strong);
-      background: rgba(87,164,255,0.08);
-      color: var(--blue-bright);
-      text-transform: uppercase;
-      letter-spacing: 1.8px;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    .page-header .eyebrow::before {
-      content: '◉';
-      color: var(--blue);
-      font-size: 11px;
-    }
-
-    .page-header h1 {
+    /* Chrome text */
+    .chrome-text {
       font-family: 'Orbitron', sans-serif;
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      line-height: 1;
-      letter-spacing: -1.5px;
-      margin-bottom: 14px;
-      text-align: center;
+      font-weight: 900;
+      text-transform: uppercase;
+      background: linear-gradient(180deg, #fff 0%, #b8d4ff 25%, #4a6fa5 50%, #b8d4ff 75%, #fff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 20px rgba(0,229,255,0.3)) drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+      letter-spacing: 2px;
     }
 
-    .page-header p {
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 70ch;
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
+    .neon-pink {
+      color: var(--neon-pink);
+      text-shadow: 0 0 10px rgba(255,43,214,0.6), 0 0 30px rgba(255,43,214,0.3);
     }
+
+    .neon-cyan {
+      color: var(--cyan);
+      text-shadow: 0 0 10px rgba(0,229,255,0.6), 0 0 30px rgba(0,229,255,0.3);
+    }
+
+    .neon-yellow {
+      color: var(--yellow);
+      font-style: italic;
+      text-shadow: 0 0 10px rgba(255,230,0,0.4);
+    }
+
+    /* Glowing card */
+    .glow-card {
+      background: var(--panel-bg);
+      border: 1px solid rgba(0,229,255,0.2);
+      border-radius: 16px;
+      padding: 28px;
+      position: relative;
+      box-shadow: 0 0 20px rgba(0,229,255,0.05), inset 0 1px 0 rgba(255,255,255,0.05);
+      transition: all 0.3s ease;
+    }
+    .glow-card:hover {
+      border-color: rgba(0,229,255,0.45);
+      box-shadow: 0 0 30px rgba(0,229,255,0.12);
+      transform: translateY(-2px);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .btn-pink {
+      background: linear-gradient(135deg, #ff2bd6, #d420a8);
+      color: white;
+      box-shadow: 0 0 20px rgba(255,43,214,0.3), 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .btn-pink:hover {
+      box-shadow: 0 0 30px rgba(255,43,214,0.5), 0 6px 20px rgba(0,0,0,0.4);
+      transform: translateY(-2px) scale(1.02);
+    }
+    .btn-cyan {
+      background: transparent;
+      color: var(--cyan);
+      border: 2px solid var(--cyan);
+      box-shadow: 0 0 15px rgba(0,229,255,0.15), inset 0 0 15px rgba(0,229,255,0.05);
+    }
+    .btn-cyan:hover {
+      background: rgba(0,229,255,0.1);
+      box-shadow: 0 0 25px rgba(0,229,255,0.25);
+      transform: translateY(-2px);
+    }
+    .btn-yellow {
+      background: linear-gradient(135deg, #ffe600, #f0cc00);
+      color: #0a0a2e;
+      box-shadow: 0 0 20px rgba(255,230,0,0.3), 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .btn-yellow:hover {
+      box-shadow: 0 0 30px rgba(255,230,0,0.5);
+      transform: translateY(-2px) scale(1.02);
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #050716; }
+    ::-webkit-scrollbar-thumb { background: rgba(0,229,255,0.2); border-radius: 4px; }
+
+    section { padding: 60px 0; position: relative; z-index: 1; }
 
     /* Schedule bar */
-    .schedule-bar {
+    .schedule-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 14px;
-      margin-bottom: 32px;
+      gap: 16px;
+      margin-bottom: 40px;
     }
-
     .schedule-item {
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(10,18,36,0.9), rgba(6,11,22,0.94));
-      border-radius: 18px;
-      padding: 18px 20px;
       text-align: center;
+      padding: 18px 16px;
+      background: rgba(0,229,255,0.03);
+      border: 1px solid rgba(0,229,255,0.15);
+      border-radius: 14px;
     }
-
     .schedule-item strong {
       display: block;
-      color: var(--blue-bright);
-      font-size: 0.78rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      color: var(--cyan);
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      letter-spacing: 1.4px;
       margin-bottom: 6px;
     }
-
     .schedule-item span {
       font-size: 0.95rem;
-      color: var(--text);
+      color: var(--white);
     }
 
-    /* Session structure */
+    /* Session structure table */
     .structure-card {
-      border: 1px solid var(--line);
-      background: linear-gradient(145deg, rgba(12, 20, 39, 0.95), rgba(6, 11, 22, 0.92));
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 28px;
-      margin-bottom: 32px;
+      overflow-x: auto;
+      margin-bottom: 40px;
     }
-
-    .structure-card h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.3rem;
-      margin-bottom: 16px;
-      letter-spacing: -0.5px;
-    }
-
     .structure-table {
       width: 100%;
       border-collapse: collapse;
     }
-
     .structure-table th,
     .structure-table td {
-      padding: 14px 16px;
+      padding: 14px 18px;
       text-align: left;
-      border-bottom: 1px solid rgba(87,164,255,0.1);
+      border-bottom: 1px solid rgba(0,229,255,0.08);
     }
-
     .structure-table th {
-      color: var(--blue-bright);
-      font-size: 0.78rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      color: var(--cyan);
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      letter-spacing: 1.3px;
       font-weight: 700;
     }
-
     .structure-table td {
       font-size: 0.92rem;
+      color: rgba(255,255,255,0.8);
     }
-
     .structure-table td:first-child {
-      color: var(--blue-bright);
+      font-family: 'Share Tech Mono', monospace;
+      color: var(--cyan);
       font-weight: 700;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.82rem;
       white-space: nowrap;
     }
-
     .structure-table td:last-child {
-      color: var(--muted);
+      color: rgba(255,255,255,0.5);
       text-align: right;
       white-space: nowrap;
     }
-
     .structure-table tr:last-child td { border-bottom: none; }
 
-    /* Phase */
-    .phase {
-      margin-bottom: 36px;
-    }
-
+    /* Phase section */
+    .phase { margin-bottom: 48px; }
     .phase-header {
       display: flex;
       align-items: center;
-      gap: 16px;
-      margin-bottom: 18px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid var(--line);
+      gap: 18px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(0,229,255,0.12);
     }
-
     .phase-number {
-      width: 48px;
-      height: 48px;
-      border: 2px solid var(--blue);
-      border-radius: 16px;
+      width: 52px; height: 52px;
+      border: 2px solid var(--neon-pink);
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'Orbitron', sans-serif;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 800;
-      color: var(--blue-bright);
+      color: var(--neon-pink);
       flex-shrink: 0;
+      box-shadow: 0 0 20px rgba(255,43,214,0.15);
     }
-
     .phase-title-block h2 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 1.35rem;
-      letter-spacing: -0.5px;
+      font-size: 1.4rem;
+      font-weight: 800;
       margin-bottom: 2px;
     }
-
     .phase-subtitle {
-      color: var(--blue-bright);
-      font-size: 0.85rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.78rem;
+      color: var(--cyan);
       font-weight: 700;
-      text-transform: uppercase;
       letter-spacing: 1.5px;
+      text-transform: uppercase;
     }
 
     /* Week cards */
     .week-card {
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(10,18,36,0.9), rgba(6,11,22,0.94));
-      border-radius: 22px;
-      padding: 24px 26px;
-      margin-bottom: 16px;
-      transition: border-color 0.3s;
+      background: var(--panel-bg);
+      border: 1px solid rgba(0,229,255,0.12);
+      border-radius: 20px;
+      padding: 26px;
+      margin-bottom: 18px;
+      transition: all 0.3s ease;
     }
-
     .week-card:hover {
-      border-color: var(--line-strong);
+      border-color: rgba(0,229,255,0.35);
+      box-shadow: 0 0 25px rgba(0,229,255,0.08);
     }
-
     .week-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
       flex-wrap: wrap;
       gap: 8px;
     }
-
     .week-label {
       font-family: 'Orbitron', sans-serif;
-      font-size: 1.05rem;
+      font-size: 0.9rem;
       font-weight: 700;
-      color: var(--text);
+      color: var(--cyan);
     }
-
     .week-date {
+      font-family: 'Share Tech Mono', monospace;
       font-size: 0.82rem;
-      color: var(--blue-bright);
-      font-weight: 600;
-      letter-spacing: 0.5px;
+      color: var(--neon-pink);
     }
-
     .week-topic {
-      font-size: 1.2rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.15rem;
       font-weight: 800;
-      margin-bottom: 16px;
-      letter-spacing: -0.3px;
+      margin-bottom: 18px;
     }
-
     .week-blocks {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 14px;
+      gap: 16px;
     }
-
     .week-block {
-      padding: 14px 16px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.05);
-      background: rgba(255,255,255,0.02);
+      padding: 16px 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(0,229,255,0.08);
+      background: rgba(0,229,255,0.02);
     }
-
     .week-block h4 {
-      font-size: 0.75rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.68rem;
       text-transform: uppercase;
-      letter-spacing: 1.3px;
-      color: var(--blue-bright);
-      margin-bottom: 8px;
+      letter-spacing: 1.5px;
+      color: var(--cyan);
+      margin-bottom: 10px;
       font-weight: 800;
     }
-
     .week-block ul {
       list-style: none;
       padding: 0;
     }
-
     .week-block li {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 5px;
-      padding-left: 14px;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 6px;
+      padding-left: 16px;
       position: relative;
+      line-height: 1.5;
     }
-
     .week-block li::before {
       content: '→';
       position: absolute;
       left: 0;
-      color: var(--blue);
+      color: var(--cyan);
       font-size: 0.8rem;
     }
-
     .week-qa {
       grid-column: 1 / -1;
-      padding: 12px 16px;
-      border-radius: 16px;
-      border: 1px solid rgba(124, 247, 191, 0.15);
-      background: rgba(124, 247, 191, 0.04);
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,230,0,0.15);
+      background: rgba(255,230,0,0.03);
     }
-
     .week-qa h4 {
-      font-size: 0.75rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.68rem;
       text-transform: uppercase;
-      letter-spacing: 1.3px;
-      color: var(--success);
-      margin-bottom: 4px;
+      letter-spacing: 1.5px;
+      color: var(--yellow);
+      margin-bottom: 6px;
       font-weight: 800;
     }
-
     .week-qa p {
       font-size: 0.9rem;
-      color: var(--muted);
-      margin: 0;
+      color: rgba(255,255,255,0.6);
     }
 
     /* Deliverables */
-    .deliverables {
-      border: 1px solid var(--line);
-      background: linear-gradient(145deg, rgba(12, 20, 39, 0.95), rgba(6, 11, 22, 0.92));
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 28px;
-      margin-top: 36px;
-    }
-
-    .deliverables h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.3rem;
-      margin-bottom: 16px;
-      letter-spacing: -0.5px;
-    }
-
-    .deliverables p {
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-
     .deliverable-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
     }
-
     .deliverable-item {
-      padding: 16px 18px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.06);
-      background: rgba(255,255,255,0.02);
+      padding: 20px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,43,214,0.12);
+      background: rgba(255,43,214,0.03);
     }
-
     .deliverable-item strong {
       display: block;
-      color: var(--blue-bright);
-      font-size: 0.92rem;
-      margin-bottom: 4px;
+      font-size: 0.95rem;
+      color: var(--neon-pink);
+      margin-bottom: 6px;
     }
-
     .deliverable-item span {
-      color: var(--muted);
+      color: rgba(255,255,255,0.6);
       font-size: 0.88rem;
     }
 
     /* Footer */
-    .page-footer {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(0,229,255,0.1);
+      padding: 30px 0;
     }
-
-    .page-footer p {
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    .page-footer a {
-      color: var(--blue-bright);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .page-footer a:hover { text-decoration: underline; }
 
     /* Responsive */
     @media (max-width: 768px) {
-      .topnav-links { display: none; }
-      .mobile-toggle { display: flex; }
-      .follow-banner a {
-        width: 100%;
-        justify-content: center;
-      }
-      .follow-banner-label {
-        font-size: 0.64rem;
-      }
-      .follow-banner-handle {
-        font-size: 0.9rem;
-      }
-      .shell { width: min(100% - 18px, 1180px); }
-      .page-header, .structure-card, .week-card, .deliverables { padding: 20px; }
+      .chrome-text { font-size: 1.5rem !important; letter-spacing: 1px; }
+      section { padding: 40px 0; }
       .week-blocks { grid-template-columns: 1fr; }
-      .structure-table { font-size: 0.85rem; }
-      .structure-table td:first-child { font-size: 0.75rem; }
+      .schedule-grid { grid-template-columns: repeat(2, 1fr); }
+      .phase-header { gap: 12px; }
+    }
+    @media (max-width: 480px) {
+      .schedule-grid { grid-template-columns: 1fr; }
+      .deliverable-grid { grid-template-columns: 1fr; }
     }
 
     /* Back to top */
@@ -635,18 +448,18 @@
       width: 48px;
       height: 48px;
       border-radius: 50%;
-      background: var(--blue);
-      color: #000;
+      background: var(--neon-pink);
+      color: white;
       border: none;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.4rem;
-      box-shadow: 0 4px 20px rgba(87,164,255,0.3);
+      box-shadow: 0 0 20px rgba(255,43,214,0.3);
       opacity: 0;
       transform: translateY(20px);
-      transition: opacity 0.3s, transform 0.3s, background 0.2s;
+      transition: opacity 0.3s, transform 0.3s;
       pointer-events: none;
       z-index: 100;
     }
@@ -656,134 +469,100 @@
       pointer-events: auto;
     }
     .back-to-top:hover {
-      background: var(--blue-bright);
+      box-shadow: 0 0 30px rgba(255,43,214,0.5);
       transform: translateY(-3px);
     }
   </style>
 </head>
 <body>
-  <div class="grid-bg"></div>
-  <div class="follow-banner">
-    <a href="https://instagram.com/innergintelprogram" target="_blank" rel="noopener noreferrer" aria-label="Follow InnerG Intel Program on Instagram">
-      <svg class="follow-banner-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"></rect>
-        <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"></circle>
-        <circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"></circle>
-      </svg>
-      <span class="follow-banner-copy">
-        <span class="follow-banner-label">FOLLOW PROGRAM ONLINE</span>
-        <span class="follow-banner-handle">@innergintelprogram</span>
-      </span>
-    </a>
-  </div>
-  <div class="shell">
 
-    <!-- Nav -->
-    <nav class="topnav">
-      <a href="index.html" class="topnav-brand">
-        <div class="brand-dot"></div>
-        <span class="brand-text">InnerG Intel</span>
-      </a>
-      <div class="topnav-links">
-        <a href="index.html">Sign Up</a>
-        <a href="curriculum.html" class="active">Curriculum</a>
+  <!-- Stars -->
+  <div class="stars" id="stars"></div>
+
+  <!-- Synthwave grid -->
+  <div class="synth-grid"></div>
+
+  <!-- NAV -->
+  <nav style="position:relative; z-index:10; padding:20px 0;">
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+      <div style="font-family:'Orbitron',sans-serif; font-weight:800; font-size:1rem; letter-spacing:3px;">
+        <span class="neon-cyan">INNERG</span> <span class="neon-pink">INTEL</span>
       </div>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
-
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html">Sign Up</a>
-      <a href="curriculum.html">Curriculum</a>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="index.html" class="btn btn-cyan" style="padding:8px 18px; font-size:0.7rem;">Sign Up</a>
+        <a href="curriculum.html" class="btn btn-pink" style="padding:8px 18px; font-size:0.7rem; opacity:0.7;">Curriculum</a>
+      </div>
     </div>
+  </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-      <div class="page-header-inner">
-        <div class="eyebrow" style="margin-left:auto;margin-right:auto;">18 Weeks · Every Monday · 7:30~9:30 PM</div>
-        <h1>Program Curriculum</h1>
-        <p>From "what is AI?" to running your own AI agent. 18 weeks of hands-on learning designed for real people ~ not engineers. May 4 through September 1, 2026.</p>
+  <div class="container">
+
+    <!-- HEADER -->
+    <section style="padding-top:10px; padding-bottom:30px; text-align:center;">
+      <div style="margin-bottom:16px;">
+        <span class="neon-yellow" style="font-family:'Orbitron',sans-serif; font-size:0.75rem; font-weight:700; letter-spacing:2px;">📋 18 WEEKS · EVERY MONDAY · 7:30–9:30 PM</span>
       </div>
+      <h1 class="chrome-text" style="font-size:2.4rem; line-height:1.15; margin-bottom:16px;">
+        Program Curriculum
+      </h1>
+      <p style="color:rgba(255,255,255,0.65); font-size:1rem; line-height:1.7; max-width:650px; margin:0 auto;">
+        From "what even is AI?" to using it with confidence in your everyday life. 18 weeks of hands-on learning built for real people — not just tech experts. May 4 through September 1, 2026.
+      </p>
     </section>
 
-    <!-- Schedule Bar -->
-    <div class="schedule-bar">
+    <!-- SCHEDULE BAR -->
+    <div class="schedule-grid">
       <div class="schedule-item">
-        <strong>Start Date</strong>
+        <strong>Starts</strong>
         <span>May 4, 2026</span>
       </div>
       <div class="schedule-item">
-        <strong>End Date</strong>
+        <strong>Ends</strong>
         <span>September 1, 2026</span>
       </div>
       <div class="schedule-item">
-        <strong>Day</strong>
+        <strong>When</strong>
         <span>Every Monday</span>
       </div>
       <div class="schedule-item">
         <strong>Time</strong>
-        <span>7:30 ~ 9:30 PM</span>
+        <span>7:30 – 9:30 PM</span>
       </div>
       <div class="schedule-item">
-        <strong>Sessions</strong>
+        <strong>Length</strong>
         <span>18 Weeks</span>
       </div>
     </div>
 
-    <!-- Session Structure -->
-    <div class="structure-card">
-      <h2>Each Session ~ 2 Hours</h2>
+    <!-- SESSION STRUCTURE -->
+    <div class="glow-card structure-card">
+      <h3 style="font-family:'Orbitron',sans-serif; font-size:1rem; font-weight:700; color:var(--cyan); margin-bottom:16px;">What Each Session Looks Like — 2 Hours</h3>
       <table class="structure-table">
         <thead>
-          <tr>
-            <th>Time</th>
-            <th>Block</th>
-            <th>Duration</th>
-          </tr>
+          <tr><th>Time</th><th>What We're Doing</th><th>How Long</th></tr>
         </thead>
         <tbody>
-          <tr>
-            <td>7:30 PM</td>
-            <td><strong>Check-in &amp; Recap</strong> ~ last week's takeaways, quick hits</td>
-            <td>10 min</td>
-          </tr>
-          <tr>
-            <td>7:40 PM</td>
-            <td><strong>Core Lesson</strong> ~ tonight's concept, plain language</td>
-            <td>35 min</td>
-          </tr>
-          <tr>
-            <td>8:15 PM</td>
-            <td><strong>Break</strong></td>
-            <td>10 min</td>
-          </tr>
-          <tr>
-            <td>8:25 PM</td>
-            <td><strong>Hands-on Lab</strong> ~ try it yourself, guided exercise</td>
-            <td>40 min</td>
-          </tr>
-          <tr>
-            <td>9:05 PM</td>
-            <td><strong>Open Q&amp;A &amp; Discussion</strong> ~ questions, thoughts, getting comfortable with AI</td>
-            <td>20 min</td>
-          </tr>
-          <tr>
-            <td>9:25 PM</td>
-            <td><strong>Wrap-up</strong> ~ homework, next week preview</td>
-            <td>5 min</td>
-          </tr>
+          <tr><td>7:30 PM</td><td><strong>Welcome &amp; Recap</strong> — what stuck from last week, quick review</td><td>10 min</td></tr>
+          <tr><td>7:40 PM</td><td><strong>Tonight's Lesson</strong> — the big idea, explained simply</td><td>35 min</td></tr>
+          <tr><td>8:15 PM</td><td><strong>Break</strong></td><td>10 min</td></tr>
+          <tr><td>8:25 PM</td><td><strong>Try It Yourself</strong> — hands-on practice, we walk through it together</td><td>40 min</td></tr>
+          <tr><td>9:05 PM</td><td><strong>Open Discussion</strong> — your questions, your thoughts, no judgment</td><td>20 min</td></tr>
+          <tr><td>9:25 PM</td><td><strong>Wrap-Up</strong> — what to try at home, next week preview</td><td>5 min</td></tr>
         </tbody>
       </table>
     </div>
 
-    <!-- Phase 1 -->
+  </div>
+
+  <div class="container" style="max-width:1100px;">
+
+    <!-- ==================== PHASE 1 ==================== -->
     <section class="phase">
       <div class="phase-header">
         <div class="phase-number">1</div>
         <div class="phase-title-block">
           <h2>Foundation</h2>
-          <div class="phase-subtitle">Weeks 1~4 · Understand AI</div>
+          <div class="phase-subtitle">Weeks 1–4 · Getting Comfortable With AI</div>
         </div>
       </div>
 
@@ -792,28 +571,28 @@
           <span class="week-label">Week 1</span>
           <span class="week-date">May 4</span>
         </div>
-        <div class="week-topic">AI Is Already Here</div>
+        <div class="week-topic">AI Is Already Part of Your Life</div>
         <div class="week-blocks">
           <div class="week-block">
-            <h4>Core Lesson</h4>
+            <h4>What We'll Talk About</h4>
             <ul>
-              <li>What AI actually is vs. what people think it is</li>
-              <li>How AI is already in your phone, apps, school, work</li>
-              <li>Shape it or be shaped by it?</li>
-              <li>Icebreaker: "What's one way you've used AI without knowing it?"</li>
+              <li>What AI actually is (and what it isn't)</li>
+              <li>How you're already using AI every day — in your phone, apps, even Netflix</li>
+              <li>Why understanding AI matters for you and your family</li>
+              <li>Icebreaker: "When did AI surprise you?"</li>
             </ul>
           </div>
           <div class="week-block">
-            <h4>Hands-on Lab</h4>
+            <h4>Let's Try It Together</h4>
             <ul>
               <li>Open ChatGPT, Claude, or Gemini for the first time</li>
-              <li>Send your first message ~ introduce yourself to AI</li>
-              <li>See how it responds, ask a follow-up</li>
+              <li>Say hi — introduce yourself to AI</li>
+              <li>Ask it something you're curious about, see what happens</li>
             </ul>
           </div>
           <div class="week-qa">
-            <h4>Q&amp;A Focus</h4>
-            <p>Fears, skepticism, "is AI going to take my job?"</p>
+            <h4>Open Questions</h4>
+            <p>"Is AI gonna take my job?" "Should I be scared?" All feelings welcome here.</p>
           </div>
         </div>
       </div>
@@ -823,28 +602,28 @@
           <span class="week-label">Week 2</span>
           <span class="week-date">May 11</span>
         </div>
-        <div class="week-topic">How AI Works (Plain English)</div>
+        <div class="week-topic">How AI Thinks (In Simple Terms)</div>
         <div class="week-blocks">
           <div class="week-block">
-            <h4>Core Lesson</h4>
+            <h4>What We'll Talk About</h4>
             <ul>
-              <li>LLMs, training data, pattern recognition ~ no code needed</li>
-              <li>Why AI sometimes gets it wrong (hallucinations, bias)</li>
-              <li>AI vs. machine learning vs. automation</li>
-              <li>Analogy: AI as super-powered autocomplete, not a brain</li>
+              <li>How AI learns — think of it like a super-powered autocomplete, not a brain</li>
+              <li>Why AI sometimes gets things wrong</li>
+              <li>The difference between AI, robots, and regular apps</li>
+              <li>Why it matters to know the difference</li>
             </ul>
           </div>
           <div class="week-block">
-            <h4>Hands-on Lab</h4>
+            <h4>Let's Try It Together</h4>
             <ul>
-              <li>Test AI's limits: ask about your neighborhood</li>
-              <li>Spot the hallucination ~ compare AI output to real facts</li>
-              <li>Group exercise: "catch the AI lying"</li>
+              <li>Test AI's knowledge: ask it about your neighborhood</li>
+              <li>Can you catch it making something up?</li>
+              <li>Group game: "Spot the AI mistake"</li>
             </ul>
           </div>
           <div class="week-qa">
-            <h4>Q&amp;A Focus</h4>
-            <p>"How can I trust it?", "Is it always right?"</p>
+            <h4>Open Questions</h4>
+            <p>"How do I know if I can trust it?" "Is it always right?"</p>
           </div>
         </div>
       </div>
@@ -854,28 +633,28 @@
           <span class="week-label">Week 3</span>
           <span class="week-date">May 18</span>
         </div>
-        <div class="week-topic">The Big 3 ~ ChatGPT, Claude, Gemini</div>
+        <div class="week-topic">The Big Three — ChatGPT, Claude &amp; Gemini</div>
         <div class="week-blocks">
           <div class="week-block">
-            <h4>Core Lesson</h4>
+            <h4>What We'll Talk About</h4>
             <ul>
-              <li>What each one does best</li>
+              <li>What each one is good at</li>
               <li>When to use which one</li>
-              <li>Strengths and weaknesses of each platform</li>
-              <li>Free vs. paid ~ what you actually need</li>
+              <li>Free vs. paid — what you actually need</li>
+              <li>Finding your favorite</li>
             </ul>
           </div>
           <div class="week-block">
-            <h4>Hands-on Lab</h4>
+            <h4>Let's Try It Together</h4>
             <ul>
-              <li>Same prompt across all three platforms</li>
-              <li>Compare outputs side by side</li>
-              <li>Find your preferred tool and explain why</li>
+              <li>Ask all three the same question</li>
+              <li>Compare how they answer — what's different?</li>
+              <li>Pick your favorite and tell us why</li>
             </ul>
           </div>
           <div class="week-qa">
-            <h4>Q&amp;A Focus</h4>
-            <p>"Which one should I use?", "Is one smarter than the others?"</p>
+            <h4>Open Questions</h4>
+            <p>"Which one should I use?" "Is one smarter than the others?"</p>
           </div>
         </div>
       </div>
@@ -885,40 +664,40 @@
           <span class="week-label">Week 4</span>
           <span class="week-date">May 25</span>
         </div>
-        <div class="week-topic">Prompt Engineering 101</div>
+        <div class="week-topic">Talking to AI — Getting Better Results</div>
         <div class="week-blocks">
           <div class="week-block">
-            <h4>Core Lesson</h4>
+            <h4>What We'll Talk About</h4>
             <ul>
-              <li>Why your prompt matters more than the tool</li>
-              <li>Structure: context → task → format → tone</li>
-              <li>Common mistakes people make when talking to AI</li>
-              <li>Prompt vs. conversation ~ the difference</li>
+              <li>Why the way you ask matters more than which tool you use</li>
+              <li>A simple formula: who you are → what you need → how you want it</li>
+              <li>Common mistakes everyone makes</li>
+              <li>How to get AI to give you exactly what you want</li>
             </ul>
           </div>
           <div class="week-block">
-            <h4>Hands-on Lab</h4>
+            <h4>Let's Try It Together</h4>
             <ul>
-              <li>Rewrite 5 bad prompts into great ones</li>
-              <li>Test your prompts live and compare results</li>
-              <li>Challenge: get AI to write exactly what you want in one try</li>
+              <li>Fix 5 bad questions and turn them into great ones</li>
+              <li>Test your improved questions live</li>
+              <li>Challenge: get the perfect answer on your first try</li>
             </ul>
           </div>
           <div class="week-qa">
-            <h4>Q&amp;A Focus</h4>
-            <p>"Why didn't it give me what I wanted?", prompt struggles</p>
+            <h4>Open Questions</h4>
+            <p>"Why didn't it give me what I wanted?" "Am I doing it wrong?"</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Phase 2 -->
+    <!-- ==================== PHASE 2 ==================== -->
     <section class="phase">
       <div class="phase-header">
         <div class="phase-number">2</div>
         <div class="phase-title-block">
           <h2>Exploration</h2>
-          <div class="phase-subtitle">Weeks 5~8 · Explore Tools</div>
+          <div class="phase-subtitle">Weeks 5–8 · Using AI In Your Everyday Life</div>
         </div>
       </div>
 
@@ -927,28 +706,28 @@
           <span class="week-label">Week 5</span>
           <span class="week-date">Jun 1</span>
         </div>
-        <div class="week-topic">AI for Writing &amp; Content</div>
+        <div class="week-topic">AI Helps You Write — Emails, Posts &amp; More</div>
         <div class="week-blocks">
           <div class="week-block">
-            <h4>Core Lesson</h4>
+            <h4>What We'll Talk About</h4>
             <ul>
-              <li>Emails, essays, social media, resumes</li>
-              <li>When AI helps vs. when it hurts your voice</li>
-              <li>The line between assistance and replacement</li>
-              <li>Keeping your authenticity while using AI</li>
+              <li>Using AI for emails, school papers, social media posts, and resumes</li>
+              <li>When AI helps vs. when it makes things sound fake</li>
+              <li>Keeping your own voice while getting AI's help</li>
+              <li>Being honest about when you used AI</li>
             </ul>
           </div>
           <div class="week-block">
-            <h4>Hands-on Lab</h4>
+            <h4>Let's Try It Together</h4>
             <ul>
-              <li>Write a professional email using AI</li>
-              <li>Create a social media post in your own voice</li>
-              <li>Redraft a resume bullet point with AI help</li>
+              <li>Write a professional email with AI's help</li>
+              <li>Create a social media post that sounds like YOU</li>
+              <li>Make a resume bullet point stand out</li>
             </ul>
           </div>
           <div class="week-qa">
-            <h4>Q&amp;A Focus</h4>
-            <p>"Does using AI for writing count as cheating?", "How do I keep it sounding like me?"</p>
+            <h4>Open Questions</h4>
+            <p>"Is using AI for writing cheating?" "How do I keep it sounding like me?"</p>
           </div>
         </div>
       </div>
@@ -958,28 +737,28 @@
           <span class="week-label">Week 6</span>
           <span class="week-date">Jun 8</span>
         </div>
-        <div class="week-topic">AI for Research &amp; Learning</div>
+        <div class="week-topic">AI as Your Study Buddy</div>
         <div class="week-blocks">
           <div class="week-block">
-            <h4>Core Lesson</h4>
+            <h4>What We'll Talk About</h4>
             <ul>
-              <li>Summarizing articles, studying, breaking down complex topics</li>
-              <li>Fact-checking AI output ~ why you must verify</li>
-              <li>Using AI as a tutor, not an answer key</li>
-              <li>Building a study workflow with AI</li>
+              <li>How to use AI to understand hard topics faster</li>
+              <li>Why you always need to double-check what AI tells you</li>
+              <li>AI as a helpful tutor, not a shortcut to answers</li>
+              <li>Building a study routine with AI</li>
             </ul>
           </div>
           <div class="week-block">
-            <h4>Hands-on Lab</h4>
+            <h4>Let's Try It Together</h4>
             <ul>
-              <li>Pick a topic you don't know, learn it with AI in 15 min</li>
-              <li>Verify 3 claims AI made using real sources</li>
-              <li>Create a study guide for a current subject</li>
+              <li>Pick something you don't understand, learn it with AI in 15 minutes</li>
+              <li>Fact-check 3 things AI said — was it right?</li>
+              <li>Build a personal study guide for a real subject</li>
             </ul>
           </div>
           <div class="week-qa">
-            <h4>Q&amp;A Focus</h4>
-            <p>"How do I know if the AI is giving me real info?", research frustrations</p>
+            <h4>Open Questions</h4>
+            <p>"How do I know if AI is giving me real info?" "What if my teacher finds out?"</p>
           </div>
         </div>
       </div>
@@ -989,28 +768,28 @@
           <span class="week-label">Week 7</span>
           <span class="week-date">Jun 15</span>
         </div>
-        <div class="week-topic">AI Images, Video &amp; Creative Tools</div>
+        <div class="week-topic">AI Makes Pictures, Videos &amp; Music</div>
         <div class="week-blocks">
           <div class="week-block">
-            <h4>Core Lesson</h4>
+            <h4>What We'll Talk About</h4>
             <ul>
-              <li>Image generation, voice, video ~ what's real and what's AI</li>
-              <li>Ethics of AI-generated content</li>
-              <li>Copyright, ownership, and giving credit</li>
-              <li>The creative industry in the AI era</li>
+              <li>How AI can create images, videos, and even music from words</li>
+              <li>What's real and what's AI-made — and why that matters</li>
+              <li>Being fair and respectful when using AI to create</li>
+              <li>What this means for artists and creative people</li>
             </ul>
           </div>
           <div class="week-block">
-            <h4>Hands-on Lab</h4>
+            <h4>Let's Try It Together</h4>
             <ul>
-              <li>Generate an image from a text prompt</li>
-              <li>Create a short video or animation using AI</li>
-              <li>Group challenge: spot the AI-generated images</li>
+              <li>Create a picture just by describing it</li>
+              <li>Make a short video or animation with AI</li>
+              <li>Group challenge: can you spot the AI-made images?</li>
             </ul>
           </div>
           <div class="week-qa">
-            <h4>Q&amp;A Focus</h4>
-            <p>"Is AI art real art?", "What about deepfakes?", creative concerns</p>
+            <h4>Open Questions</h4>
+            <p>"Is AI art really art?" "What about fake videos?" All perspectives welcome.</p>
           </div>
         </div>
       </div>
@@ -1020,40 +799,40 @@
           <span class="week-label">Week 8</span>
           <span class="week-date">Jun 22</span>
         </div>
-        <div class="week-topic">AI for Productivity &amp; Organization</div>
+        <div class="week-topic">Getting Organized With AI</div>
         <div class="week-blocks">
           <div class="week-block">
-            <h4>Core Lesson</h4>
+            <h4>What We'll Talk About</h4>
             <ul>
-              <li>Calendars, to-do lists, scheduling, note-taking</li>
-              <li>Building a personal AI workflow</li>
-              <li>Automating the boring stuff</li>
-              <li>Time management with AI assistance</li>
+              <li>Using AI for your calendar, to-do lists, and daily planning</li>
+              <li>Building a routine that actually works for you</li>
+              <li>Letting AI handle the boring stuff so you can focus</li>
+              <li>Not becoming dependent — using AI as a helper, not a boss</li>
             </ul>
           </div>
           <div class="week-block">
-            <h4>Hands-on Lab</h4>
+            <h4>Let's Try It Together</h4>
             <ul>
-              <li>Design your AI-powered daily routine</li>
-              <li>Set up an AI-assisted to-do system</li>
-              <li>Create a weekly planner using AI prompts</li>
+              <li>Design your ideal daily routine with AI's help</li>
+              <li>Set up an AI-powered to-do system</li>
+              <li>Create a weekly planner that fits YOUR life</li>
             </ul>
           </div>
           <div class="week-qa">
-            <h4>Q&amp;A Focus</h4>
-            <p>"How do I not become dependent?", "What if AI messes up my schedule?"</p>
+            <h4>Open Questions</h4>
+            <p>"What if I get too reliant on it?" "Can AI really help me stay organized?"</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Phase 3 -->
+    <!-- ==================== PHASE 3 ==================== -->
     <section class="phase">
       <div class="phase-header">
         <div class="phase-number">3</div>
         <div class="phase-title-block">
           <h2>Application</h2>
-          <div class="phase-subtitle">Weeks 9~13 · Gain the Advantage</div>
+          <div class="phase-subtitle">Weeks 9–13 · Putting AI to Work for You</div>
         </div>
       </div>
 
@@ -1062,28 +841,28 @@
           <span class="week-label">Week 9</span>
           <span class="week-date">Jun 29</span>
         </div>
-        <div class="week-topic">AI in School &amp; Academics</div>
+        <div class="week-topic">AI &amp; School — The Right Way</div>
         <div class="week-blocks">
           <div class="week-block">
-            <h4>Core Lesson</h4>
+            <h4>What We'll Talk About</h4>
             <ul>
-              <li>Using AI to study, not cheat</li>
-              <li>How teachers and schools are adapting</li>
-              <li>Academic integrity in the AI era</li>
-              <li>When AI is a tool vs. when it's a shortcut</li>
+              <li>How to use AI as a study tool, not a cheating tool</li>
+              <li>What teachers and schools really think about AI</li>
+              <li>Being honest and responsible with AI at school</li>
+              <li>Where the line is — helper vs. shortcut</li>
             </ul>
           </div>
           <div class="week-block">
-            <h4>Hands-on Lab</h4>
+            <h4>Let's Try It Together</h4>
             <ul>
-              <li>Break down a complex reading with AI</li>
-              <li>Create flashcards or a study plan with AI</li>
-              <li>Practice ethical AI use in an academic scenario</li>
+              <li>Break down a tough reading with AI's help</li>
+              <li>Create flashcards or a study plan</li>
+              <li>Practice using AI the right way in a school scenario</li>
             </ul>
           </div>
           <div class="week-qa">
-            <h4>Q&amp;A Focus</h4>
-            <p>"Where's the line?", "What do teachers actually think about AI?"</p>
+            <h4>Open Questions</h4>
+            <p>"Where's the line?" "What do my teachers actually think?"</p>
           </div>
         </div>
       </div>
@@ -1093,28 +872,28 @@
           <span class="week-label">Week 10</span>
           <span class="week-date">Jul 6</span>
         </div>
-        <div class="week-topic">AI in the Workplace</div>
+        <div class="week-topic">AI &amp; Your Future Career</div>
         <div class="week-blocks">
           <div class="week-block">
-            <h4>Core Lesson</h4>
+            <h4>What We'll Talk About</h4>
             <ul>
-              <li>How jobs are changing ~ what's automated, what's not</li>
-              <li>AI as a skill on your resume</li>
-              <li>Positioning yourself for an AI-driven job market</li>
-              <li>Jobs that will grow, jobs that will shift</li>
+              <li>How jobs are changing — what's shifting, what's staying</li>
+              <li>Why knowing AI makes you stand out</li>
+              <li>Adding AI skills to your resume the right way</li>
+              <li>Jobs that are growing vs. jobs that are changing</li>
             </ul>
           </div>
           <div class="week-block">
-            <h4>Hands-on Lab</h4>
+            <h4>Let's Try It Together</h4>
             <ul>
-              <li>Identify 3 AI skills for your career path</li>
-              <li>Use AI to improve a real work sample</li>
-              <li>Draft an "AI-literate" resume bullet point</li>
+              <li>Find 3 AI skills that fit YOUR career goals</li>
+              <li>Use AI to make a work sample even better</li>
+              <li>Write a resume bullet that shows you're AI-ready</li>
             </ul>
           </div>
           <div class="week-qa">
-            <h4>Q&amp;A Focus</h4>
-            <p>Job anxiety, career pivots, "should I learn to code?"</p>
+            <h4>Open Questions</h4>
+            <p>Job worries, career changes, "should I learn coding?" — let's talk it through.</p>
           </div>
         </div>
       </div>
@@ -1124,28 +903,28 @@
           <span class="week-label">Week 11</span>
           <span class="week-date">Jul 13</span>
         </div>
-        <div class="week-topic">Intro to AI Agents</div>
+        <div class="week-topic">Meet AI Agents — AI That Does Things For You</div>
         <div class="week-blocks">
           <div class="week-block">
-            <h4>Core Lesson</h4>
+            <h4>What We'll Talk About</h4>
             <ul>
-              <li>Beyond chatbots ~ AI that does things</li>
-              <li>What are agents? (tools, memory, autonomy)</li>
-              <li>The agent stack: instructions + tools + memory</li>
-              <li>Real-world agent examples</li>
+              <li>Beyond chatting — AI that can actually take action for you</li>
+              <li>What are "agents"? Think: a helpful assistant that never sleeps</li>
+              <li>Real examples of AI agents helping people right now</li>
+              <li>What an agent can and can't do</li>
             </ul>
           </div>
           <div class="week-block">
-            <h4>Hands-on Lab</h4>
+            <h4>Let's Try It Together</h4>
             <ul>
-              <li>Live demo: OpenClaw agent in action</li>
-              <li>Watch an agent send emails, check calendars, do research</li>
-              <li>Brainstorm what your own agent could do</li>
+              <li>Watch a live demo of an AI agent in action</li>
+              <li>See it send emails, check calendars, do research — on its own</li>
+              <li>Brainstorm: what would YOUR personal AI agent do?</li>
             </ul>
           </div>
           <div class="week-qa">
-            <h4>Q&amp;A Focus</h4>
-            <p>"Is this Skynet?", "Can I actually build one?", excitement vs. fear</p>
+            <h4>Open Questions</h4>
+            <p>"Is this safe?" "Can I build one?" Excitement, curiosity, concerns — all good.</p>
           </div>
         </div>
       </div>
@@ -1155,28 +934,28 @@
           <span class="week-label">Week 12</span>
           <span class="week-date">Jul 20</span>
         </div>
-        <div class="week-topic">Building Your Own AI Workflow</div>
+        <div class="week-topic">Build Your Own AI Helper</div>
         <div class="week-blocks">
           <div class="week-block">
-            <h4>Core Lesson</h4>
+            <h4>What We'll Talk About</h4>
             <ul>
-              <li>Pick a real task you do every week</li>
-              <li>Map it: what AI can handle, what you still own</li>
-              <li>Designing a workflow that saves time without losing quality</li>
-              <li>Testing and iterating your workflow</li>
+              <li>Pick something you do every week that takes too long</li>
+              <li>Figure out what AI can handle and what you should still do yourself</li>
+              <li>Design a simple system that saves you time</li>
+              <li>Testing it out and making it better</li>
             </ul>
           </div>
           <div class="week-block">
-            <h4>Hands-on Lab</h4>
+            <h4>Let's Try It Together</h4>
             <ul>
-              <li>Map out a personal workflow on paper</li>
-              <li>Build a simple agent workflow step by step</li>
-              <li>Test it, identify gaps, improve it</li>
+              <li>Map out your personal AI helper on paper</li>
+              <li>Build it step by step — no coding needed</li>
+              <li>Test it, find what's missing, improve it</li>
             </ul>
           </div>
           <div class="week-qa">
-            <h4>Q&amp;A Focus</h4>
-            <p>Workflow ideas, troubleshooting, "how do I know if it's working?"</p>
+            <h4>Open Questions</h4>
+            <p>"How do I know if it's working?" "What if it messes up?" Let's figure it out together.</p>
           </div>
         </div>
       </div>
@@ -1186,40 +965,40 @@
           <span class="week-label">Week 13</span>
           <span class="week-date">Jul 27</span>
         </div>
-        <div class="week-topic">AI for Entrepreneurs &amp; Side Hustles</div>
+        <div class="week-topic">AI for Business Owners &amp; Side Hustles</div>
         <div class="week-blocks">
           <div class="week-block">
-            <h4>Core Lesson</h4>
+            <h4>What We'll Talk About</h4>
             <ul>
-              <li>Using AI to start or grow a business</li>
-              <li>Content, outreach, customer service, branding</li>
-              <li>Real examples from the InnerG Intel ecosystem</li>
-              <li>AI as a co-founder, not a replacement</li>
+              <li>Using AI to start or grow something of your own</li>
+              <li>Content, reaching customers, branding — all with AI's help</li>
+              <li>Real stories from people already doing it</li>
+              <li>AI as your partner in building, not a replacement for your ideas</li>
             </ul>
           </div>
           <div class="week-block">
-            <h4>Hands-on Lab</h4>
+            <h4>Let's Try It Together</h4>
             <ul>
               <li>Brainstorm a business idea with AI</li>
-              <li>Generate a brand identity (name, tagline, content)</li>
-              <li>Create a one-page business plan with AI</li>
+              <li>Create a brand — name, tagline, social media posts</li>
+              <li>Put together a simple one-page business plan</li>
             </ul>
           </div>
           <div class="week-qa">
-            <h4>Q&amp;A Focus</h4>
-            <p>"Can AI run my business?", side hustle strategies, business ideas</p>
+            <h4>Open Questions</h4>
+            <p>"Can AI run my business?" "I have an idea — where do I start?"</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Phase 4 -->
+    <!-- ==================== PHASE 4 ==================== -->
     <section class="phase">
       <div class="phase-header">
         <div class="phase-number">4</div>
         <div class="phase-title-block">
           <h2>Readiness</h2>
-          <div class="phase-subtitle">Weeks 14~18 · Move With Intention</div>
+          <div class="phase-subtitle">Weeks 14–18 · Ready For What's Next</div>
         </div>
       </div>
 
@@ -1228,28 +1007,28 @@
           <span class="week-label">Week 14</span>
           <span class="week-date">Aug 3</span>
         </div>
-        <div class="week-topic">AI Safety, Privacy &amp; Mental Health</div>
+        <div class="week-topic">Staying Safe — Your Privacy &amp; Well-Being</div>
         <div class="week-blocks">
           <div class="week-block">
-            <h4>Core Lesson</h4>
+            <h4>What We'll Talk About</h4>
             <ul>
-              <li>What data AI collects and how to protect yourself</li>
-              <li>Deepfakes, scams, and misinformation</li>
-              <li>Mental safety in a fast-changing landscape</li>
-              <li>Setting boundaries with AI in your daily life</li>
+              <li>What information AI collects and how to protect yourself</li>
+              <li>Fake videos, scams, and misleading content — how to spot them</li>
+              <li>Taking care of yourself in a world that moves fast</li>
+              <li>Setting healthy boundaries with technology</li>
             </ul>
           </div>
           <div class="week-block">
-            <h4>Hands-on Lab</h4>
+            <h4>Let's Try It Together</h4>
             <ul>
-              <li>Audit your own AI data footprint</li>
-              <li>Learn to spot a deepfake or AI scam</li>
-              <li>Create a personal AI safety checklist</li>
+              <li>Check your own digital footprint with AI</li>
+              <li>Learn to spot a fake video or scam</li>
+              <li>Make your own personal safety checklist</li>
             </ul>
           </div>
           <div class="week-qa">
-            <h4>Q&amp;A Focus</h4>
-            <p>Privacy concerns, "is AI listening to me?", mental health and tech overload</p>
+            <h4>Open Questions</h4>
+            <p>"Is AI listening to me?" "How do I protect my family?" Real concerns, real answers.</p>
           </div>
         </div>
       </div>
@@ -1259,28 +1038,28 @@
           <span class="week-label">Week 15</span>
           <span class="week-date">Aug 10</span>
         </div>
-        <div class="week-topic">Critical Thinking in an AI World</div>
+        <div class="week-topic">Thinking For Yourself In an AI World</div>
         <div class="week-blocks">
           <div class="week-block">
-            <h4>Core Lesson</h4>
+            <h4>What We'll Talk About</h4>
             <ul>
-              <li>How to question AI output</li>
-              <li>Spotting AI-generated content in the wild</li>
-              <li>Building a filter: trust but verify</li>
-              <li>Media literacy in the age of AI</li>
+              <li>Why you should always question what AI tells you</li>
+              <li>How to tell if something online is real or AI-made</li>
+              <li>Building the habit: trust, but always check</li>
+              <li>Being smart about what you see and share online</li>
             </ul>
           </div>
           <div class="week-block">
-            <h4>Hands-on Lab</h4>
+            <h4>Let's Try It Together</h4>
             <ul>
-              <li>Evaluate 10 pieces of content: real or AI?</li>
-              <li>Practice verifying claims across sources</li>
-              <li>Build a personal fact-checking workflow</li>
+              <li>Look at 10 things online — real or AI? You decide.</li>
+              <li>Practice checking facts across different sources</li>
+              <li>Build your own simple fact-checking routine</li>
             </ul>
           </div>
           <div class="week-qa">
-            <h4>Q&amp;A Focus</h4>
-            <p>Trust, skepticism, "how do I know what's real anymore?"</p>
+            <h4>Open Questions</h4>
+            <p>"How do I know what's real anymore?" "Who can I trust?"</p>
           </div>
         </div>
       </div>
@@ -1290,28 +1069,28 @@
           <span class="week-label">Week 16</span>
           <span class="week-date">Aug 17</span>
         </div>
-        <div class="week-topic">The Future of AI ~ What's Coming Next</div>
+        <div class="week-topic">What's Coming Next — The Future of AI</div>
         <div class="week-blocks">
           <div class="week-block">
-            <h4>Core Lesson</h4>
+            <h4>What We'll Talk About</h4>
             <ul>
-              <li>Trends, new tools, and where this is heading</li>
-              <li>Why adaptability matters more than any single tool</li>
-              <li>Preparing for what doesn't exist yet</li>
-              <li>AI literacy as a lifelong practice</li>
+              <li>What's new, what's coming, and where this is all heading</li>
+              <li>Why being adaptable matters more than knowing any one tool</li>
+              <li>Getting ready for things that don't even exist yet</li>
+              <li>AI as something you keep learning about — for life</li>
             </ul>
           </div>
           <div class="week-block">
-            <h4>Hands-on Lab</h4>
+            <h4>Let's Try It Together</h4>
             <ul>
-              <li>Research an emerging AI tool or trend</li>
-              <li>Present a 2-minute "future pitch" to the class</li>
-              <li>Write a letter to your future self about AI readiness</li>
+              <li>Explore a brand new AI tool together</li>
+              <li>Share your 2-minute "future pitch" with the group</li>
+              <li>Write a note to your future self about being AI-ready</li>
             </ul>
           </div>
           <div class="week-qa">
-            <h4>Q&amp;A Focus</h4>
-            <p>Hopes, fears, excitement about the future, final reflections</p>
+            <h4>Open Questions</h4>
+            <p>Hopes, worries, excitement — let's talk about where we're all headed.</p>
           </div>
         </div>
       </div>
@@ -1321,28 +1100,28 @@
           <span class="week-label">Week 17</span>
           <span class="week-date">Aug 24</span>
         </div>
-        <div class="week-topic">Capstone ~ Your AI Action Plan</div>
+        <div class="week-topic">Your AI Action Plan — Show What You Know</div>
         <div class="week-blocks">
           <div class="week-block">
-            <h4>Core Lesson</h4>
+            <h4>What We'll Talk About</h4>
             <ul>
-              <li>Review of the full program</li>
-              <li>How to build your personal AI strategy</li>
-              <li>Presenting with confidence</li>
+              <li>Looking back at everything we covered</li>
+              <li>Building your personal game plan for using AI going forward</li>
+              <li>Sharing with confidence — your voice matters</li>
             </ul>
           </div>
           <div class="week-block">
-            <h4>Hands-on Lab</h4>
+            <h4>Let's Try It Together</h4>
             <ul>
-              <li>Each student presents their AI Action Plan</li>
-              <li>What they learned, what tools they'll use</li>
-              <li>How they'll apply AI in school/work/life</li>
-              <li>Personal boundaries with AI</li>
+              <li>Each person shares their personal AI Action Plan</li>
+              <li>What you learned, what tools you'll keep using</li>
+              <li>How you'll use AI in school, work, and everyday life</li>
+              <li>What boundaries you're setting for yourself</li>
             </ul>
           </div>
           <div class="week-qa">
-            <h4>Q&amp;A Focus</h4>
-            <p>Peer feedback, encouragement, open discussion about the journey</p>
+            <h4>Open Questions</h4>
+            <p>Cheering each other on, sharing takeaways, open conversation.</p>
           </div>
         </div>
       </div>
@@ -1352,88 +1131,106 @@
           <span class="week-label">Week 18</span>
           <span class="week-date">Sep 1</span>
         </div>
-        <div class="week-topic">Graduation &amp; Next Steps</div>
+        <div class="week-topic">🎓 Graduation Day — You Did It!</div>
         <div class="week-blocks">
           <div class="week-block">
-            <h4>Core Lesson</h4>
+            <h4>What We'll Talk About</h4>
             <ul>
-              <li>Program recap and highlights</li>
-              <li>Certificates of completion</li>
-              <li>Resources for continued learning</li>
-              <li>InnerG Intel community &amp; ongoing support</li>
+              <li>Celebrating the journey — look how far you came</li>
+              <li>Getting your certificate of completion 🏆</li>
+              <li>Resources to keep learning on your own</li>
+              <li>Staying connected with the InnerG Intel community</li>
             </ul>
           </div>
           <div class="week-block">
-            <h4>Hands-on Lab</h4>
+            <h4>Let's Try It Together</h4>
             <ul>
               <li>Finalize and share your AI Action Plan</li>
-              <li>Exchange contact info with classmates</li>
-              <li>Explore InnerG Intel community resources</li>
+              <li>Connect with your classmates</li>
+              <li>Explore what's next with InnerG Intel</li>
             </ul>
           </div>
           <div class="week-qa">
-            <h4>Q&amp;A Focus</h4>
-            <p>What's next, staying connected, final questions, closing thoughts</p>
+            <h4>Open Questions</h4>
+            <p>What's next, staying connected, closing thoughts, celebration! 🎉</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Deliverables -->
-    <section class="deliverables">
-      <h2>What You'll Leave With</h2>
-      <p>Every student completes the program with real tools they can use immediately.</p>
-      <div class="deliverable-grid">
-        <div class="deliverable-item">
-          <strong>📝 Prompt Cheat Sheet</strong>
-          <span>Go-to prompts for school, work, and life</span>
-        </div>
-        <div class="deliverable-item">
-          <strong>⚙️ Personal AI Workflow</strong>
-          <span>A system you actually use day to day</span>
-        </div>
-        <div class="deliverable-item">
-          <strong>🗺️ AI Action Plan</strong>
-          <span>Your personalized roadmap going forward</span>
-        </div>
-        <div class="deliverable-item">
-          <strong>📚 Resource Guide</strong>
-          <span>Tools, links, and continued learning paths</span>
-        </div>
-        <div class="deliverable-item">
-          <strong>💬 Community Access</strong>
-          <span>InnerG Intel Discord ~ for help, future resources, and ongoing support</span>
-        </div>
-        <div class="deliverable-item">
-          <strong>🏆 Certificate of Completion</strong>
-          <span>InnerG Intel AI Program 2026</span>
+    <!-- ==================== DELIVERABLES ==================== -->
+    <section>
+      <div class="glow-card">
+        <h3 class="chrome-text" style="font-size:1.4rem; margin-bottom:8px;">What You Walk Away With</h3>
+        <p style="color:rgba(255,255,255,0.6); font-size:0.95rem; margin-bottom:24px;">Real tools, real skills, real confidence — not just talk.</p>
+        <div class="deliverable-grid">
+          <div class="deliverable-item">
+            <strong>📝 Your Go-To Prompt Guide</strong>
+            <span>Ready-to-use prompts for school, work, and everyday life</span>
+          </div>
+          <div class="deliverable-item">
+            <strong>⚙️ Your Personal AI System</strong>
+            <span>A setup you actually use every day</span>
+          </div>
+          <div class="deliverable-item">
+            <strong>🗺️ Your AI Action Plan</strong>
+            <span>Your own roadmap for what comes next</span>
+          </div>
+          <div class="deliverable-item">
+            <strong>📚 Resource Guide</strong>
+            <span>Tools, websites, and ways to keep learning</span>
+          </div>
+          <div class="deliverable-item">
+            <strong>💬 Community Access</strong>
+            <span>InnerG Intel community — support, resources, and updates</span>
+          </div>
+          <div class="deliverable-item">
+            <strong>🏆 Certificate of Completion</strong>
+            <span>InnerG Intelligence Program 2026</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <div class="page-footer">
-      <p>Instructor: <a href="mailto:nasirr@innergintel.org">Nasirr Mayo</a> · InnerG Intel</p>
-      <p><a href="index.html">← Back to Sign Up</a></p>
-    </div>
+    <!-- BACK TO SIGNUP -->
+    <section style="text-align:center; padding-bottom:80px;">
+      <a href="index.html" class="btn btn-pink" style="font-size:0.9rem; padding:16px 40px;">← Back to Sign Up</a>
+    </section>
 
   </div>
 
+  <!-- FOOTER -->
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <span style="font-family:'Orbitron',sans-serif; font-size:0.75rem; color:rgba(255,255,255,0.3); letter-spacing:2px;">INNERG INTEL © 2026</span>
+      <span style="font-family:'Share Tech Mono',monospace; font-size:0.75rem; color:rgba(0,229,255,0.3);">PHILLY BUILT. FUTURE READY.</span>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
   <script>
-    const toggle = document.getElementById('mobileToggle');
-    const menu = document.getElementById('mobileMenu');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('open');
-    });
+    // Stars
+    (function() {
+      var c = document.getElementById('stars');
+      for (var i = 0; i < 120; i++) {
+        var s = document.createElement('div');
+        s.className = 'star';
+        s.style.left = Math.random() * 100 + '%';
+        s.style.top = Math.random() * 70 + '%';
+        s.style.animationDelay = (Math.random() * 3) + 's';
+        s.style.width = s.style.height = (Math.random() * 2 + 1) + 'px';
+        c.appendChild(s);
+      }
+    })();
 
-    // Back to top button
-    const btt = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
+    // Back to top
+    var btt = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
       btt.classList.toggle('visible', window.scrollY > 400);
     });
-    btt.addEventListener('click', () => {
+    btt.addEventListener('click', function() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
