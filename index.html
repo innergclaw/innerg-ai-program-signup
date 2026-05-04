@@ -793,9 +793,13 @@
           body: JSON.stringify(obj)
         }).then(function(res) {
           if (res.ok) {
-            status.textContent = '✓ You\'re in! We\'ll be in touch soon.';
-            status.style.color = '#7cf7bf';
-            form.reset();
+            if (formId === 'public-form') {
+              window.location.href = 'welcome.html';
+            } else {
+              status.textContent = '✓ Request sent! We\'ll be in touch soon.';
+              status.style.color = '#7cf7bf';
+              form.reset();
+            }
           } else {
             status.textContent = 'Something went wrong. Please try again.';
             status.style.color = '#ff6b6b';
