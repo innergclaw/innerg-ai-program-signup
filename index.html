@@ -3,1123 +3,725 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>InnerG Intel AI Program 2026</title>
-  <meta name="description" content="Sign up for InnerG Intel AI Program 2026 Monday classes and request free 45-minute sessions for schools and programs.">
+  <title>InnerG Intelligence Program 2026 — AI Literacy For The Future</title>
+  <meta name="description" content="InnerG Intelligence Program 2026 — AI literacy for high school students, college students, parents, families, and professionals preparing for the future.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@600;700;800;900&family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #050b16;
-      --bg-soft: #0a1324;
-      --panel: rgba(10, 18, 36, 0.88);
-      --panel-2: rgba(8, 14, 28, 0.94);
-      --line: rgba(87, 164, 255, 0.18);
-      --line-strong: rgba(87, 164, 255, 0.35);
-      --blue: #57a4ff;
-      --blue-bright: #6fd1ff;
-      --text: #f4f8ff;
-      --muted: #a7b8cf;
-      --success: #7cf7bf;
-      --shadow: 0 30px 80px rgba(0,0,0,0.45);
-      --radius: 24px;
+      --bg-dark: #050716;
+      --bg-navy: #15245c;
+      --neon-pink: #ff2bd6;
+      --cyan: #00e5ff;
+      --yellow: #ffe600;
+      --electric-blue: #2d5bff;
+      --white: #ffffff;
+      --panel-bg: rgba(10, 14, 40, 0.85);
+      --retro-shadow: 0 0 30px rgba(0, 229, 255, 0.15);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: 'Inter', sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(87, 164, 255, 0.12), transparent 26%),
-        radial-gradient(circle at top right, rgba(111, 209, 255, 0.1), transparent 20%),
-        linear-gradient(180deg, #03070d 0%, #08101e 100%);
-      color: var(--text);
-      min-height: 100vh;
-      line-height: 1.6;
+      background: radial-gradient(circle at top, #15245c, #050716 55%, #02030a);
+      color: var(--white);
       overflow-x: hidden;
+      position: relative;
     }
 
-    .grid-bg {
+    /* Halftone overlay */
+    body::before {
+      content: '';
       position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(87,164,255,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(87,164,255,0.06) 1px, transparent 1px);
-      background-size: 36px 36px;
-      mask-image: radial-gradient(circle at center, black 45%, transparent 95%);
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 4px 4px;
       pointer-events: none;
-      opacity: 0.35;
+      z-index: 9998;
     }
 
-    .follow-banner {
-      display: flex;
-      justify-content: center;
-      position: relative;
-      z-index: 2;
-      margin: 18px auto 8px;
-      padding: 0 14px;
-    }
-
-    .follow-banner a {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      border: 1px solid var(--line-strong);
-      background: rgba(87,164,255,0.08);
-      color: var(--text);
-      text-decoration: none;
-      box-shadow: 0 16px 36px rgba(0,0,0,0.28);
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-    }
-
-    .follow-banner a:hover {
-      transform: translateY(-1px);
-      border-color: rgba(111, 209, 255, 0.55);
-      background: rgba(87,164,255,0.14);
-    }
-
-    .follow-banner-copy {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-
-    .follow-banner-label {
-      font-size: 0.68rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--blue-bright);
-      font-weight: 800;
-    }
-
-    .follow-banner-handle {
-      font-size: 0.98rem;
-      font-weight: 800;
-      color: var(--text);
-    }
-
-    .follow-banner-icon {
-      width: 20px;
-      height: 20px;
-      flex: 0 0 20px;
-    }
-
-    .topnav {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 36px;
-      padding: 18px 0;
-      margin-bottom: 8px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .topnav-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-
-    .brand-dot {
-      width: 36px;
-      height: 36px;
-      border: 2px solid var(--blue);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      position: relative;
-    }
-
-    .brand-dot::after {
+    /* Vintage poster border */
+    body::after {
       content: '';
-      width: 12px;
-      height: 12px;
-      background: var(--blue);
-      border-radius: 3px;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border: 8px solid rgba(255,230,0,0.12);
+      border-image: linear-gradient(135deg, rgba(255,43,214,0.15), rgba(0,229,255,0.15), rgba(255,230,0,0.1), rgba(45,91,255,0.15)) 1;
+      pointer-events: none;
+      z-index: 9997;
     }
 
-    .brand-text {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.82rem;
-      letter-spacing: 2.5px;
-      color: var(--text);
-      text-transform: uppercase;
-    }
-
-    .topnav-links {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .topnav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      transition: color 0.2s;
-    }
-
-    .topnav-links a:hover,
-    .topnav-links a.active {
-      color: var(--blue-bright);
-    }
-
-    .mobile-toggle {
-      display: none;
-      background: none;
-      border: 1px solid var(--line-strong);
-      border-radius: 12px;
-      padding: 8px 10px;
-      cursor: pointer;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .mobile-toggle span {
-      display: block;
-      width: 18px;
-      height: 2px;
-      background: var(--text);
-      border-radius: 2px;
-    }
-
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      gap: 0;
-      margin-bottom: 16px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
+    /* Stars background */
+    .stars {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 0;
       overflow: hidden;
-      position: relative;
-      z-index: 2;
     }
-
-    .mobile-menu.open { display: flex; }
-
-    .mobile-menu a {
-      padding: 14px 20px;
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 600;
-      border-bottom: 1px solid var(--line);
-      transition: background 0.2s;
-    }
-
-    .mobile-menu a:last-child { border-bottom: none; }
-    .mobile-menu a:hover { background: rgba(87,164,255,0.08); }
-
-    @media (max-width: 768px) {
-      .topnav-links { display: none; }
-      .mobile-toggle { display: flex; }
-      .follow-banner a {
-        width: 100%;
-        justify-content: center;
-      }
-      .follow-banner-label {
-        font-size: 0.64rem;
-      }
-      .follow-banner-handle {
-        font-size: 0.9rem;
-      }
-    }
-
-    .shell {
-      width: min(1180px, calc(100% - 28px));
-      margin: 0 auto;
-      padding: 24px 0 60px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero {
-      border: 1px solid var(--line);
-      background: linear-gradient(145deg, rgba(12, 20, 39, 0.95), rgba(6, 11, 22, 0.92));
-      border-radius: 30px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      margin-bottom: 24px;
-      position: relative;
-    }
-
-    .hero::before {
-      content: "";
+    .star {
       position: absolute;
-      inset: 0;
+      width: 2px; height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 3s infinite alternate;
+    }
+    @keyframes twinkle { 0% { opacity: 0.2; } 100% { opacity: 0.8; } }
+
+    /* Synthwave grid */
+    .synth-grid {
+      position: fixed;
+      bottom: 0; left: -50%; right: -50%;
+      height: 45vh;
       background:
-        linear-gradient(90deg, transparent, rgba(111,209,255,0.08), transparent),
-        radial-gradient(circle at center, rgba(87,164,255,0.12), transparent 50%);
+        linear-gradient(transparent 0%, rgba(0,229,255,0.03) 100%),
+        repeating-linear-gradient(90deg, rgba(0,229,255,0.06) 0px, rgba(0,229,255,0.06) 1px, transparent 1px, transparent 80px),
+        repeating-linear-gradient(0deg, rgba(0,229,255,0.06) 0px, rgba(0,229,255,0.06) 1px, transparent 1px, transparent 80px);
+      transform: perspective(500px) rotateX(60deg);
+      transform-origin: bottom center;
       pointer-events: none;
+      z-index: 0;
+      mask-image: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+      -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.95fr;
-      gap: 30px;
-      padding: 34px;
-      align-items: center;
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
       position: relative;
       z-index: 1;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--line-strong);
-      background: rgba(87,164,255,0.08);
-      color: var(--blue-bright);
-      text-transform: uppercase;
-      letter-spacing: 1.8px;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    .eyebrow::before {
-      content: '◉';
-      color: var(--blue);
-      font-size: 11px;
-    }
-
-    h1 {
+    /* Chrome text effect */
+    .chrome-text {
       font-family: 'Orbitron', sans-serif;
-      font-size: clamp(2.3rem, 5vw, 4.8rem);
-      line-height: 0.98;
-      letter-spacing: -2px;
-      margin-bottom: 18px;
-      text-align: center;
-    }
-
-    .hero p {
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 60ch;
-      margin-bottom: 20px;
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .message-box {
-      border: 1px solid rgba(111,209,255,0.2);
-      background: rgba(87,164,255,0.06);
-      border-radius: 20px;
-      padding: 18px 20px;
-      margin-bottom: 22px;
-    }
-
-    .message-box strong {
-      display: block;
-      color: var(--blue-bright);
-      font-size: 0.84rem;
+      font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 1.6px;
-      margin-bottom: 8px;
+      background: linear-gradient(180deg, #fff 0%, #b8d4ff 25%, #4a6fa5 50%, #b8d4ff 75%, #fff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 20px rgba(0,229,255,0.3)) drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+      letter-spacing: 2px;
     }
 
-    .message-box p {
-      color: var(--text);
-      font-size: 1rem;
-      margin: 0;
+    /* Neon glow heading */
+    .neon-pink {
+      color: var(--neon-pink);
+      text-shadow: 0 0 10px rgba(255,43,214,0.6), 0 0 30px rgba(255,43,214,0.3), 0 0 60px rgba(255,43,214,0.15);
     }
 
-    .hero-points {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+    .neon-cyan {
+      color: var(--cyan);
+      text-shadow: 0 0 10px rgba(0,229,255,0.6), 0 0 30px rgba(0,229,255,0.3);
     }
 
-    .point {
-      border: 1px solid rgba(255,255,255,0.06);
-      background: rgba(255,255,255,0.02);
-      border-radius: 18px;
-      padding: 16px;
+    .neon-yellow {
+      color: var(--yellow);
+      font-style: italic;
+      text-shadow: 0 0 10px rgba(255,230,0,0.4);
     }
 
-    .point h3 {
-      font-size: 0.82rem;
-      color: var(--blue-bright);
-      text-transform: uppercase;
-      letter-spacing: 1.3px;
-      margin-bottom: 6px;
-      font-weight: 800;
-    }
-
-    .point p {
-      font-size: 0.92rem;
-      color: var(--text);
-      margin: 0;
-    }
-
-    .hero-art {
-      position: relative;
-      min-height: 100%;
-      border-radius: 26px;
-      overflow: hidden;
-      border: 1px solid rgba(87,164,255,0.18);
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
-      background: linear-gradient(180deg, rgba(8,14,28,0.16), rgba(8,14,28,0.4));
-      min-height: 620px;
-    }
-
-    .hero-art img {
-      width: 100%;
-      height: 100%;
-      min-height: 620px;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-    }
-
-    .hero-art::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(7,14,28,0.02), rgba(7,14,28,0.42));
-      pointer-events: none;
-    }
-
-    .hero-overlay-card {
-      position: absolute;
-      left: 20px;
-      right: 20px;
-      bottom: 20px;
-      z-index: 1;
-      background: rgba(6, 10, 20, 0.78);
-      border: 1px solid rgba(111,209,255,0.18);
-      border-radius: 22px;
-      padding: 18px;
-      backdrop-filter: blur(12px);
-    }
-
-    .hero-overlay-card h3 {
-      font-size: 0.85rem;
-      color: var(--blue-bright);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 8px;
-    }
-
-    .hero-overlay-card p {
-      margin: 0;
-      font-size: 0.95rem;
-      color: var(--text);
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .card {
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(10,18,36,0.9), rgba(6,11,22,0.94));
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 28px;
-    }
-
-    .card h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.65rem;
-      line-height: 1.1;
-      margin-bottom: 12px;
-      letter-spacing: -1px;
-    }
-
-    .card > p {
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .tag {
-      display: inline-block;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1.6px;
-      font-weight: 800;
-      color: var(--blue-bright);
-      margin-bottom: 10px;
-    }
-
-    .info-list {
-      display: grid;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-
-    .info-item {
-      padding: 14px 16px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.06);
-      background: rgba(255,255,255,0.02);
-    }
-
-    .info-item strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 0.96rem;
-    }
-
-    .info-item span,
-    .info-item a {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .info-item a {
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .info-item a:hover {
-      color: var(--blue-bright);
-    }
-
-    form {
-      display: grid;
-      gap: 14px;
-    }
-
-    .field-group {
-      display: grid;
-      gap: 8px;
-    }
-
-    label {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 14px 16px;
+    /* Glowing card */
+    .glow-card {
+      background: var(--panel-bg);
+      border: 1px solid rgba(0,229,255,0.2);
       border-radius: 16px;
-      border: 1px solid rgba(87,164,255,0.2);
-      background: rgba(3, 8, 16, 0.85);
-      color: var(--text);
-      font: inherit;
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-
-    input:focus, select:focus, textarea:focus {
-      border-color: var(--blue-bright);
-      box-shadow: 0 0 0 4px rgba(111,209,255,0.12);
-    }
-
-    textarea { min-height: 120px; resize: vertical; }
-
-    .button {
-      border: none;
-      border-radius: 999px;
-      padding: 16px 20px;
-      font-weight: 800;
-      font-size: 0.95rem;
-      cursor: pointer;
-      color: #041120;
-      background: linear-gradient(90deg, var(--blue), var(--blue-bright));
-      box-shadow: 0 18px 40px rgba(87,164,255,0.25);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 22px 50px rgba(87,164,255,0.35);
-    }
-
-    .note {
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
-    .status {
-      min-height: 20px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--success);
-    }
-
-    .full {
-      grid-column: 1 / -1;
-    }
-
-    @media (max-width: 980px) {
-      .hero-grid,
-      .content-grid,
-      .hero-points {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-art,
-      .hero-art img {
-        min-height: 520px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .shell { width: min(100% - 18px, 1180px); }
-      .hero-grid, .card { padding: 22px; }
-      .hero-art,
-      .hero-art img { min-height: 440px; }
-      h1 { letter-spacing: -1.5px; }
-    }
-    /* Pricing */
-    .pricing-section {
-      margin-bottom: 24px;
-      text-align: center;
-    }
-    .pricing-section .section-title {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(1.4rem, 3vw, 2.2rem);
-      letter-spacing: -1px;
-      margin-bottom: 8px;
-    }
-    .pricing-section .section-sub {
-      color: var(--muted);
-      font-size: 1rem;
-      margin-bottom: 28px;
-    }
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-    .price-card {
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(10,18,36,0.9), rgba(6,11,22,0.94));
-      border-radius: 22px;
-      padding: 28px 22px;
-      text-align: center;
-      transition: border-color 0.3s, transform 0.2s;
+      padding: 28px;
       position: relative;
+      box-shadow: 0 0 20px rgba(0,229,255,0.05), inset 0 1px 0 rgba(255,255,255,0.05);
+      transition: all 0.3s ease;
     }
-    .price-card:hover {
-      border-color: var(--line-strong);
-      transform: translateY(-3px);
-    }
-    .price-card.featured {
-      border-color: var(--blue);
-      background: linear-gradient(180deg, rgba(20,40,70,0.9), rgba(10,20,40,0.95));
-      box-shadow: 0 0 40px rgba(87,164,255,0.12);
-    }
-    .price-card.featured::before {
-      content: 'BEST VALUE';
-      position: absolute;
-      top: -1px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--blue);
-      color: #000;
-      font-size: 0.65rem;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      padding: 4px 14px;
-      border-radius: 0 0 8px 8px;
-    }
-    .price-card .topic-label {
-      color: var(--blue-bright);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-    .price-card h3 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.1rem;
-      margin-bottom: 4px;
-    }
-    .price-card .weeks {
-      color: var(--muted);
-      font-size: 0.82rem;
-      margin-bottom: 14px;
-    }
-    .price-card .amount {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2.4rem;
-      font-weight: 800;
-      margin-bottom: 4px;
-    }
-    .price-card .amount span {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--muted);
-    }
-    .price-card .includes-list {
-      list-style: none;
-      padding: 0;
-      margin: 16px 0;
-      text-align: left;
-    }
-    .price-card .includes-list li {
-      color: var(--muted);
-      font-size: 0.85rem;
-      padding: 5px 0;
-      border-bottom: 1px solid rgba(87,164,255,0.08);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .price-card .includes-list li:last-child { border-bottom: none; }
-    .price-card .includes-list li::before {
-      content: '✓';
-      color: var(--success);
-      font-weight: 700;
-      font-size: 0.8rem;
-    }
-    .price-card .includes-list li.locked::before {
-      content: '✕';
-      color: #ff6b6b;
-    }
-    .price-note {
-      color: var(--muted);
-      font-size: 0.85rem;
-      margin-top: 8px;
-      padding: 14px 18px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: rgba(10,18,36,0.6);
-      text-align: center;
-    }
-    .pay-btn {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 28px;
-      background: var(--blue);
-      color: #000;
-      font-weight: 700;
-      font-size: 0.85rem;
-      letter-spacing: 0.5px;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .pay-btn:hover {
-      background: var(--blue-bright);
+    .glow-card:hover {
+      border-color: rgba(0,229,255,0.45);
+      box-shadow: 0 0 30px rgba(0,229,255,0.12), inset 0 1px 0 rgba(255,255,255,0.08);
       transform: translateY(-2px);
     }
-    @media (max-width: 640px) {
-      .pricing-grid { grid-template-columns: 1fr; }
+    .glow-card::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: -1px; right: -1px; bottom: -1px;
+      border-radius: 17px;
+      background: linear-gradient(135deg, rgba(0,229,255,0.15), transparent 50%, rgba(255,43,214,0.1));
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .glow-card:hover::before { opacity: 1; }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .btn-pink {
+      background: linear-gradient(135deg, #ff2bd6, #d420a8);
+      color: white;
+      box-shadow: 0 0 20px rgba(255,43,214,0.3), 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .btn-pink:hover {
+      box-shadow: 0 0 30px rgba(255,43,214,0.5), 0 6px 20px rgba(0,0,0,0.4);
+      transform: translateY(-2px) scale(1.02);
+    }
+    .btn-cyan {
+      background: transparent;
+      color: var(--cyan);
+      border: 2px solid var(--cyan);
+      box-shadow: 0 0 15px rgba(0,229,255,0.15), inset 0 0 15px rgba(0,229,255,0.05);
+    }
+    .btn-cyan:hover {
+      background: rgba(0,229,255,0.1);
+      box-shadow: 0 0 25px rgba(0,229,255,0.25), inset 0 0 25px rgba(0,229,255,0.1);
+      transform: translateY(-2px);
+    }
+    .btn-yellow {
+      background: linear-gradient(135deg, #ffe600, #f0cc00);
+      color: #0a0a2e;
+      box-shadow: 0 0 20px rgba(255,230,0,0.3), 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .btn-yellow:hover {
+      box-shadow: 0 0 30px rgba(255,230,0,0.5), 0 6px 20px rgba(0,0,0,0.4);
+      transform: translateY(-2px) scale(1.02);
     }
 
-    /* Back to top */
-    .back-to-top {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
+    /* Starburst badge */
+    .starburst {
+      display: inline-block;
+      padding: 10px 20px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 800;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #0a0a2e;
+      background: var(--yellow);
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      width: 140px;
+      height: 140px;
+      line-height: 140px;
+      text-align: center;
+      position: relative;
+    }
+    .starburst-alt {
+      background: var(--neon-pink);
+      color: white;
+    }
+
+    /* CRT monitor */
+    .crt-monitor {
+      background: #0a0a1a;
+      border: 3px solid rgba(0,229,255,0.3);
+      border-radius: 12px;
+      padding: 24px;
+      position: relative;
+      box-shadow: 0 0 40px rgba(0,229,255,0.08), inset 0 0 60px rgba(0,0,0,0.5);
+      overflow: hidden;
+    }
+    .crt-monitor::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,0,0.015) 2px, rgba(0,255,0,0.015) 4px);
+      pointer-events: none;
+    }
+    .crt-monitor::after {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.4) 100%);
+      pointer-events: none;
+    }
+    .crt-text {
+      font-family: 'Share Tech Mono', monospace;
+      color: #00ff41;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      text-shadow: 0 0 8px rgba(0,255,65,0.5);
+      position: relative;
+      z-index: 1;
+    }
+    .crt-text .cursor {
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* Retro review box */
+    .review-box {
+      background: linear-gradient(135deg, rgba(255,43,214,0.08), rgba(0,229,255,0.05));
+      border: 2px solid rgba(255,230,0,0.25);
+      border-radius: 16px;
+      padding: 36px;
+      position: relative;
+    }
+    .review-box::before {
+      content: '★★★★★';
+      display: block;
+      font-size: 1.5rem;
+      color: var(--yellow);
+      margin-bottom: 16px;
+      text-shadow: 0 0 10px rgba(255,230,0,0.4);
+      letter-spacing: 4px;
+    }
+
+    /* Neon icon placeholder */
+    .neon-icon {
       width: 48px;
       height: 48px;
-      border-radius: 50%;
-      background: var(--blue);
-      color: #000;
-      border: none;
-      cursor: pointer;
+      border: 2px solid var(--cyan);
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
-      box-shadow: 0 4px 20px rgba(87,164,255,0.3);
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.3s, transform 0.3s, background 0.2s;
-      pointer-events: none;
-      z-index: 100;
+      font-size: 1.3rem;
+      box-shadow: 0 0 15px rgba(0,229,255,0.15);
+      margin-bottom: 16px;
+      background: rgba(0,229,255,0.05);
     }
-    .back-to-top.visible {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #050716; }
+    ::-webkit-scrollbar-thumb { background: rgba(0,229,255,0.2); border-radius: 4px; }
+
+    /* Section spacing */
+    section { padding: 80px 0; position: relative; z-index: 1; }
+
+    /* Feature grid */
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .audience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+
+    /* Forms */
+    .form-section { display: none; }
+    .form-section.active { display: block; }
+    .form-input {
+      width: 100%;
+      padding: 14px 18px;
+      background: rgba(0,229,255,0.05);
+      border: 1px solid rgba(0,229,255,0.2);
+      border-radius: 8px;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.3s;
     }
-    .back-to-top:hover {
-      background: var(--blue-bright);
-      transform: translateY(-3px);
+    .form-input:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 15px rgba(0,229,255,0.1);
+    }
+    .form-input::placeholder { color: rgba(255,255,255,0.3); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .chrome-text { font-size: 1.6rem !important; letter-spacing: 1px; }
+      .hero-buttons { flex-direction: column; align-items: stretch; }
+      .hero-grid { grid-template-columns: 1fr !important; }
+      section { padding: 50px 0; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .audience-grid { grid-template-columns: repeat(2, 1fr); }
+      .starburst { width: 110px; height: 110px; line-height: 110px; font-size: 0.65rem; }
+      .cta-stars { display: none; }
+    }
+    @media (max-width: 480px) {
+      .audience-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(2,3,10,0.85);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-box {
+      background: linear-gradient(135deg, #0a1428, #0d0a28);
+      border: 1px solid rgba(0,229,255,0.25);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 500px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 0 60px rgba(0,229,255,0.1);
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px; right: 20px;
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.4);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .modal-close:hover { color: white; }
+
+    /* Scanline animation */
+    @keyframes scanline {
+      0% { top: -10%; }
+      100% { top: 110%; }
+    }
+    .scanline {
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, rgba(0,255,65,0.08), transparent);
+      z-index: 2;
+      animation: scanline 6s linear infinite;
     }
   </style>
 </head>
 <body>
-  <div class="grid-bg"></div>
-  <div class="follow-banner">
-    <a href="https://instagram.com/innergintelprogram" target="_blank" rel="noopener noreferrer" aria-label="Follow InnerG Intel Program on Instagram">
-      <svg class="follow-banner-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"></rect>
-        <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"></circle>
-        <circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"></circle>
-      </svg>
-      <span class="follow-banner-copy">
-        <span class="follow-banner-label">FOLLOW PROGRAM ONLINE</span>
-        <span class="follow-banner-handle">@innergintelprogram</span>
-      </span>
-    </a>
-  </div>
-  <nav class="topnav">
-    <a href="index.html" class="topnav-brand">
-      <div class="brand-dot"></div>
-      <span class="brand-text">InnerG Intel</span>
-    </a>
-    <div class="topnav-links">
-      <a href="index.html" class="active">Sign Up</a>
-      <a href="curriculum.html">Curriculum</a>
+
+  <!-- Stars -->
+  <div class="stars" id="stars"></div>
+
+  <!-- Synthwave grid -->
+  <div class="synth-grid"></div>
+
+  <!-- ==================== NAV ==================== -->
+  <nav style="position:relative; z-index:10; padding:20px 0;">
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+      <div style="font-family:'Orbitron',sans-serif; font-weight:800; font-size:1rem; letter-spacing:3px;">
+        <span class="neon-cyan">INNERG</span> <span class="neon-pink">INTEL</span>
+      </div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="#program" class="btn btn-cyan" style="padding:8px 18px; font-size:0.7rem;">Program</a>
+        <a href="#audience" class="btn btn-cyan" style="padding:8px 18px; font-size:0.7rem;">Who It's For</a>
+        <button class="btn btn-pink" style="padding:8px 18px; font-size:0.7rem;" onclick="openModal('public')">Join Now</button>
+      </div>
     </div>
-    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
   </nav>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Sign Up</a>
-    <a href="curriculum.html">Curriculum</a>
+  <!-- ==================== HERO ==================== -->
+  <section style="padding-top:20px; padding-bottom:60px;">
+    <div class="container">
+      <div class="hero-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;">
+
+        <div>
+          <div style="margin-bottom:20px;">
+            <span class="neon-yellow" style="font-family:'Orbitron',sans-serif; font-size:0.8rem; font-weight:700; letter-spacing:2px;">⚡ AI LITERACY FOR THE NEXT GENERATION</span>
+          </div>
+
+          <h1 class="chrome-text" style="font-size:2.6rem; line-height:1.15; margin-bottom:20px;">
+            Introducing<br>InnerG Intelligence<br>Program 2026!
+          </h1>
+
+          <p style="font-family:'Orbitron',sans-serif; font-weight:700; color:var(--cyan); font-size:1.1rem; margin-bottom:16px; text-shadow:0 0 10px rgba(0,229,255,0.3);">
+            The future is thinking back.
+          </p>
+
+          <p style="color:rgba(255,255,255,0.75); font-size:1rem; line-height:1.7; margin-bottom:32px; max-width:520px;">
+            A dynamic, engaging session on AI literacy in the modern era, designed for high school students, college students, parents, families, and professionals navigating a rapidly changing landscape.
+          </p>
+
+          <div class="hero-buttons" style="display:flex; gap:16px; flex-wrap:wrap;">
+            <button class="btn btn-pink" onclick="openModal('public')">Join The Program</button>
+            <button class="btn btn-cyan" onclick="openModal('school')">Book A Free Session</button>
+          </div>
+        </div>
+
+        <!-- CRT Computer -->
+        <div>
+          <div class="crt-monitor">
+            <div class="scanline"></div>
+            <div class="crt-text">
+              <p style="opacity:0.5;">C:\INNERG\PROGRAM_2026></p>
+              <p>Initializing InnerG Intel AI Assistant...</p>
+              <br>
+              <p>> SYSTEM ONLINE ✓</p>
+              <p>> InnerG Intel AI Assistant 2026</p>
+              <p>> Learn AI. Build confidence. Lead the future.</p>
+              <br>
+              <p>> Program Status: <span style="color:#00e5ff;">ACTIVE</span></p>
+              <p>> Sessions: Every Monday</p>
+              <p>> Enrollment: <span style="color:#ffe600;">OPEN NOW</span></p>
+              <br>
+              <p>> Ready to begin? <span class="cursor">█</span></p>
+            </div>
+          </div>
+          <div style="text-align:center; margin-top:16px;">
+            <span style="font-family:'Share Tech Mono',monospace; color:rgba(0,229,255,0.4); font-size:0.75rem;">INNERG INTEL SYSTEMS © 2026</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURES ==================== -->
+  <section id="program">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:48px;">
+        <h2 class="chrome-text" style="font-size:2rem; margin-bottom:12px;">Empower Today. Lead Tomorrow.</h2>
+        <p style="color:rgba(255,255,255,0.6); font-size:0.95rem;">Practical AI skills designed for real-world impact.</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="glow-card">
+          <div class="neon-icon">🧠</div>
+          <h3 style="font-family:'Orbitron',sans-serif; font-size:0.85rem; font-weight:700; margin-bottom:8px; color:var(--cyan);">AI Fundamentals</h3>
+          <p style="color:rgba(255,255,255,0.7); font-size:0.9rem; line-height:1.6;">Learn AI fundamentals made simple — no tech background required.</p>
+        </div>
+
+        <div class="glow-card">
+          <div class="neon-icon">🔧</div>
+          <h3 style="font-family:'Orbitron',sans-serif; font-size:0.85rem; font-weight:700; margin-bottom:8px; color:var(--cyan);">Real-World Tools</h3>
+          <p style="color:rgba(255,255,255,0.7); font-size:0.9rem; line-height:1.6;">Explore real-world tools &amp; practical use cases you can apply today.</p>
+        </div>
+
+        <div class="glow-card">
+          <div class="neon-icon">💬</div>
+          <h3 style="font-family:'Orbitron',sans-serif; font-size:0.85rem; font-weight:700; margin-bottom:8px; color:var(--cyan);">Prompt Engineering</h3>
+          <p style="color:rgba(255,255,255,0.7); font-size:0.9rem; line-height:1.6;">Understand prompt engineering for everyday success.</p>
+        </div>
+
+        <div class="glow-card">
+          <div class="neon-icon">🚀</div>
+          <h3 style="font-family:'Orbitron',sans-serif; font-size:0.85rem; font-weight:700; margin-bottom:8px; color:var(--cyan);">Digital Confidence</h3>
+          <p style="color:rgba(255,255,255,0.7); font-size:0.9rem; line-height:1.6;">Build confidence in the digital future — stand out, don't fall behind.</p>
+        </div>
+
+        <div class="glow-card" style="grid-column: span 2;">
+          <div class="neon-icon">👨‍👩‍👧‍👦</div>
+          <h3 style="font-family:'Orbitron',sans-serif; font-size:0.85rem; font-weight:700; margin-bottom:8px; color:var(--cyan);">Designed For Everyone</h3>
+          <p style="color:rgba(255,255,255,0.7); font-size:0.9rem; line-height:1.6;">Designed for students, parents, families &amp; professionals — because AI literacy isn't optional anymore.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== AUDIENCE ==================== -->
+  <section id="audience">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:48px;">
+        <h2 class="chrome-text" style="font-size:2rem; margin-bottom:12px;">Built For The Future-Minded</h2>
+        <p style="color:rgba(255,255,255,0.6); font-size:0.95rem; max-width:600px; margin:0 auto;">Whether you're preparing for college, work, entrepreneurship, or the next era of technology, this program helps make AI understandable, useful, and empowering.</p>
+      </div>
+
+      <div class="audience-grid">
+        <div class="glow-card" style="text-align:center; padding:24px 16px;">
+          <div style="font-size:2rem; margin-bottom:10px;">🎓</div>
+          <h3 style="font-family:'Orbitron',sans-serif; font-size:0.75rem; font-weight:700; color:var(--cyan);">High School<br>Students</h3>
+        </div>
+        <div class="glow-card" style="text-align:center; padding:24px 16px;">
+          <div style="font-size:2rem; margin-bottom:10px;">📚</div>
+          <h3 style="font-family:'Orbitron',sans-serif; font-size:0.75rem; font-weight:700; color:var(--cyan);">College<br>Students</h3>
+        </div>
+        <div class="glow-card" style="text-align:center; padding:24px 16px;">
+          <div style="font-size:2rem; margin-bottom:10px;">👨‍👩‍👧</div>
+          <h3 style="font-family:'Orbitron',sans-serif; font-size:0.75rem; font-weight:700; color:var(--cyan);">Parents &amp;<br>Families</h3>
+        </div>
+        <div class="glow-card" style="text-align:center; padding:24px 16px;">
+          <div style="font-size:2rem; margin-bottom:10px;">💼</div>
+          <h3 style="font-family:'Orbitron',sans-serif; font-size:0.75rem; font-weight:700; color:var(--cyan);">Professionals</h3>
+        </div>
+        <div class="glow-card" style="text-align:center; padding:24px 16px;">
+          <div style="font-size:2rem; margin-bottom:10px;">🏛️</div>
+          <h3 style="font-family:'Orbitron',sans-serif; font-size:0.75rem; font-weight:700; color:var(--cyan);">Community<br>Leaders</h3>
+        </div>
+        <div class="glow-card" style="text-align:center; padding:24px 16px;">
+          <div style="font-size:2rem; margin-bottom:10px;">🏫</div>
+          <h3 style="font-family:'Orbitron',sans-serif; font-size:0.75rem; font-weight:700; color:var(--cyan);">Educators</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIAL ==================== -->
+  <section>
+    <div class="container" style="max-width:700px;">
+      <div class="review-box">
+        <p style="font-size:1.2rem; font-style:italic; line-height:1.7; color:rgba(255,255,255,0.9); margin-bottom:12px;">
+          "Finally… something that actually prepares my child for the future."
+        </p>
+        <p style="font-family:'Orbitron',sans-serif; font-size:0.75rem; color:var(--cyan); letter-spacing:1px;">
+          — PARENT, 2026
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== VALUE SECTION ==================== -->
+  <section>
+    <div class="container" style="max-width:800px; text-align:center;">
+      <h2 class="chrome-text" style="font-size:2rem; margin-bottom:20px;">AI Literacy Is The New Literacy.</h2>
+      <p style="color:rgba(255,255,255,0.75); font-size:1.05rem; line-height:1.8; max-width:650px; margin:0 auto;">
+        This is not about replacing people. This is about <span class="neon-pink" style="font-weight:700;">preparing</span> people. InnerG Intelligence teaches practical AI awareness so students, parents, and professionals can move with confidence in a world changing fast.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== FINAL CTA ==================== -->
+  <section style="padding-bottom:120px;">
+    <div class="container" style="text-align:center;">
+      <h2 class="chrome-text" style="font-size:2.2rem; margin-bottom:16px;">Join The Movement. Learn The Future.</h2>
+      <p style="color:rgba(255,255,255,0.6); font-size:0.95rem; margin-bottom:36px;">Monday sessions. Real skills. Real impact.</p>
+
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:48px;">
+        <button class="btn btn-yellow" onclick="openModal('public')">Sign Up Today</button>
+        <button class="btn btn-pink" onclick="openModal('school')">Request A Session</button>
+      </div>
+
+      <!-- Starbursts -->
+      <div style="display:flex; justify-content:center; gap:40px; flex-wrap:wrap; align-items:center;" class="cta-stars">
+        <div style="text-align:center;">
+          <div class="starburst" style="display:flex; align-items:center; justify-content:center; line-height:1.3; padding-top:35px;">FREE<br>SESSION</div>
+        </div>
+        <div style="text-align:center;">
+          <div class="starburst starburst-alt" style="display:flex; align-items:center; justify-content:center; line-height:1.3; padding-top:30px;">AI SKILLS<br>FOR THE<br>NEXT GEN</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer style="position:relative; z-index:1; border-top:1px solid rgba(0,229,255,0.1); padding:30px 0;">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <span style="font-family:'Orbitron',sans-serif; font-size:0.75rem; color:rgba(255,255,255,0.3); letter-spacing:2px;">INNERG INTEL © 2026</span>
+      <span style="font-family:'Share Tech Mono',monospace; font-size:0.75rem; color:rgba(0,229,255,0.3);">PHILLY BUILT. FUTURE READY.</span>
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS ==================== -->
+
+  <!-- Join Program Modal -->
+  <div class="modal-overlay" id="modal-public">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('public')">&times;</button>
+      <h3 style="font-family:'Orbitron',sans-serif; font-size:1rem; font-weight:700; margin-bottom:6px; color:var(--cyan);">JOIN THE PROGRAM</h3>
+      <p style="color:rgba(255,255,255,0.5); font-size:0.85rem; margin-bottom:24px;">Monday sessions start May 4 and continue every Monday through September 1.</p>
+
+      <form id="public-form" style="display:grid; gap:14px;">
+        <input class="form-input" type="text" name="name" placeholder="Your name" required>
+        <input class="form-input" type="email" name="email" placeholder="Email address" required>
+        <input class="form-input" type="tel" name="phone" placeholder="Phone number (optional)">
+        <select class="form-input" name="audience" required>
+          <option value="" disabled selected>I am a...</option>
+          <option value="high-school">High School Student</option>
+          <option value="college">College Student</option>
+          <option value="parent">Parent / Family</option>
+          <option value="professional">Professional</option>
+          <option value="educator">Educator</option>
+          <option value="community-leader">Community Leader</option>
+          <option value="other">Other</option>
+        </select>
+        <button class="btn btn-pink" type="submit" style="width:100%;">Sign Up For Monday Classes</button>
+        <p id="public-status" style="text-align:center; font-size:0.85rem; margin-top:4px;"></p>
+      </form>
+    </div>
   </div>
 
-  <main class="shell">
-    <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <div class="eyebrow">Monday classes begin May 4</div>
-          <h1>InnerG Intel AI Program 2026</h1>
-          <p>A dynamic, engaging session on AI literacy in the modern era, designed for high school, college students, and professionals navigating a rapidly changing landscape.</p>
+  <!-- Free Session Modal -->
+  <div class="modal-overlay" id="modal-school">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('school')">&times;</button>
+      <h3 style="font-family:'Orbitron',sans-serif; font-size:1rem; font-weight:700; margin-bottom:6px; color:var(--neon-pink);">REQUEST A FREE 45-MINUTE SESSION</h3>
+      <p style="color:rgba(255,255,255,0.5); font-size:0.85rem; margin-bottom:24px;">For schools, programs, community groups, and organizations.</p>
 
-          <div class="message-box">
-            <strong>The Message</strong>
-            <p>“AI isn’t coming. It’s already here. The question is, will you be shaped by it, or will you learn to shape it?”</p>
-          </div>
-
-          <div class="hero-points">
-            <div class="point">
-              <h3>Understand AI</h3>
-              <p>Build a strong foundation in AI literacy and critical thinking.</p>
-            </div>
-            <div class="point">
-              <h3>Explore Tools</h3>
-              <p>Discover useful AI tools and how to use them effectively.</p>
-            </div>
-            <div class="point">
-              <h3>Gain the Advantage</h3>
-              <p>Learn how to apply AI strategically in life, school, and future careers.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-art">
-          <div class="hero-overlay-card">
-            <h3>Program Window</h3>
-            <p>Monday sessions start <strong>May 4</strong> and continue every Monday through <strong>September 1</strong>.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="pricing-section">
-      <h2 class="section-title">Choose Your Path</h2>
-      <p class="section-sub">Pay per topic or go all in. Full program students graduate with the certificate.</p>
-
-      <div class="pricing-grid">
-        <div class="price-card">
-          <div class="topic-label">Topic 1</div>
-          <h3>Foundation</h3>
-          <div class="weeks">Weeks 1 ~ 4 &nbsp;·&nbsp; May 4 ~ May 25</div>
-          <div class="amount">$125</div>
-          <ul class="includes-list">
-            <li>What AI actually is</li>
-            <li>How AI works (plain English)</li>
-            <li>The Big 3 platforms</li>
-            <li>Prompt Engineering 101</li>
-          </ul>
-          <a href="https://buy.stripe.com/3cI28tdoz3i1gFMbubao80K" target="_blank" class="pay-btn">Pay $125</a>
-        </div>
-
-        <div class="price-card">
-          <div class="topic-label">Topic 2</div>
-          <h3>Exploration</h3>
-          <div class="weeks">Weeks 5 ~ 8 &nbsp;·&nbsp; Jun 1 ~ Jun 22</div>
-          <div class="amount">$125</div>
-          <ul class="includes-list">
-            <li>AI for writing and content</li>
-            <li>Research and learning</li>
-            <li>Images, video, creative tools</li>
-            <li>Productivity and organization</li>
-          </ul>
-          <a href="https://buy.stripe.com/4gM28tckvbOx3T0eGnao80L" target="_blank" class="pay-btn">Pay $125</a>
-        </div>
-
-        <div class="price-card">
-          <div class="topic-label">Topic 3</div>
-          <h3>Application</h3>
-          <div class="weeks">Weeks 9 ~ 12 &nbsp;·&nbsp; Jun 29 ~ Jul 20</div>
-          <div class="amount">$125</div>
-          <ul class="includes-list">
-            <li>AI in school and academics</li>
-            <li>AI in the workplace</li>
-            <li>Intro to AI agents</li>
-            <li>Build your own AI workflow</li>
-          </ul>
-          <a href="https://buy.stripe.com/00w8wR3NZ7yhcpwbubao80M" target="_blank" class="pay-btn">Pay $125</a>
-        </div>
-
-        <div class="price-card">
-          <div class="topic-label">Topic 4</div>
-          <h3>Readiness</h3>
-          <div class="weeks">Weeks 13 ~ 16 &nbsp;·&nbsp; Jul 27 ~ Aug 17</div>
-          <div class="amount">$125</div>
-          <ul class="includes-list">
-            <li>Entrepreneurs and side hustles</li>
-            <li>Safety, privacy, mental health</li>
-            <li>Critical thinking in AI</li>
-            <li>Future of AI</li>
-          </ul>
-          <a href="https://buy.stripe.com/bJeaEZ84f8Cl4X48hZao80N" target="_blank" class="pay-btn">Pay $125</a>
-        </div>
-      </div>
-
-      <!-- Full Program Card -->
-      <div class="price-card featured" style="max-width:560px;margin:0 auto;">
-        <div class="topic-label">Full Program</div>
-        <h3>18 Weeks ~ Everything</h3>
-        <div class="weeks">May 4 through September 1</div>
-        <div class="amount">$500 <span>total</span></div>
-        <ul class="includes-list" style="max-width:380px;margin:16px auto;">
-          <li>All 4 topics + Capstone + Graduation</li>
-          <li>Personal AI Action Plan</li>
-          <li>InnerG Intel Discord community access</li>
-          <li>🏆 Certificate of Completion</li>
-        </ul>
-        <a href="https://buy.stripe.com/14AaEZbgrf0Jaho9m3ao80O" target="_blank" class="pay-btn">Pay $500</a>
-      </div>
-
-      <div class="price-note">
-        <strong>Per-topic students</strong> can continue after each topic or step away at any break. Only full program students are eligible for the Capstone, Graduation, and Certificate of Completion.
-      </div>
-    </section>
-
-    <section class="content-grid">
-      <article class="card">
-        <div class="tag">Everyday sign up</div>
-        <h2>Reserve your spot for the Monday classes</h2>
-        <p>For students, parents, professionals, and everyday people who want to learn AI with clarity and confidence.</p>
-
-        <div class="info-list">
-          <div class="info-item">
-            <strong>Who this is for</strong>
-            <span>High school students, college students, working adults, and anyone trying to understand how AI fits into the future.</span>
-          </div>
-          <div class="info-item">
-            <strong>Schedule</strong>
-            <span>Every Monday starting May 4, continuing through September 1.</span>
-          </div>
-          <div class="info-item">
-            <strong>What you’ll leave with</strong>
-            <span>Stronger AI literacy, practical tool awareness, and a more strategic understanding of how to move in an AI-driven world.</span>
-          </div>
-        </div>
-
-        <form id="public-form">
-          <input type="hidden" name="audience_type" value="Everyday signup">
-          <div class="field-group">
-            <label for="public-name">Full name</label>
-            <input id="public-name" name="name" type="text" placeholder="Your full name" required>
-          </div>
-          <div class="field-group">
-            <label for="public-email">Email address</label>
-            <input id="public-email" name="email" type="email" placeholder="you@example.com" required>
-          </div>
-          <div class="field-group">
-            <label for="public-phone">Phone number</label>
-            <input id="public-phone" name="phone" type="tel" placeholder="(555) 000-0000" required>
-          </div>
-          <button class="button" type="submit">Sign Up for Monday Classes</button>
-          <div class="status" id="public-status"></div>
-          <p class="note">Your email and phone number will be stored through Formspree so follow-up can stay simple.</p>
-        </form>
-      </article>
-
-      <article class="card">
-        <div class="tag">Schools, teachers, and admin</div>
-        <h2>Request the free 45-minute session</h2>
-        <p>For schools, programs, teachers, and administrators interested in bringing InnerG Intel into their space.</p>
-
-        <div class="info-list">
-          <div class="info-item">
-            <strong>Offer</strong>
-            <span>Free 45-minute session for schools and programs for a limited time.</span>
-          </div>
-          <div class="info-item">
-            <strong>Format</strong>
-            <span>Virtual and in-person sessions available, depending on fit and timing.</span>
-          </div>
-          <div class="info-item">
-            <strong>Focus</strong>
-            <span>AI understanding, modern literacy, critical thinking, and mental safety in a fast-changing landscape.</span>
-          </div>
-        </div>
-
-        <form id="school-form">
-          <input type="hidden" name="audience_type" value="School or organization inquiry">
-          <div class="field-group">
-            <label for="school-name">Contact name</label>
-            <input id="school-name" name="contact_name" type="text" placeholder="Your name" required>
-          </div>
-          <div class="field-group">
-            <label for="school-email">Email address</label>
-            <input id="school-email" name="email" type="email" placeholder="you@school.org" required>
-          </div>
-          <div class="field-group">
-            <label for="school-phone">Phone number</label>
-            <input id="school-phone" name="phone" type="tel" placeholder="(555) 000-0000" required>
-          </div>
-          <div class="field-group">
-            <label for="organization">School or organization</label>
-            <input id="organization" name="organization" type="text" placeholder="School or organization name" required>
-          </div>
-          <div class="field-group">
-            <label for="role">Role</label>
-            <select id="role" name="role" required>
-              <option value="">Select your role</option>
-              <option value="Teacher">Teacher</option>
-              <option value="Administrator">Administrator</option>
-              <option value="Program Director">Program Director</option>
-              <option value="Counselor">Counselor</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="field-group">
-            <label for="timeframe">Preferred time frame</label>
-            <select id="timeframe" name="timeframe" required>
-              <option value="">Select a time frame</option>
-              <option value="Current week">Current week</option>
-              <option value="Within a few weeks">Within a few weeks</option>
-              <option value="More than 30 days from today">More than 30 days from today</option>
-            </select>
-          </div>
-          <div class="field-group">
-            <label for="details">Details</label>
-            <textarea id="details" name="details" placeholder="Tell us about your students, program, goals, and any details that matter." required></textarea>
-          </div>
-          <button class="button" type="submit">Request Free 45-Minute Session</button>
-          <div class="status" id="school-status"></div>
-          <p class="note">This form is for teachers, administrators, schools, and programs only.</p>
-        </form>
-      </article>
-
-      <article class="card full">
-        <div class="tag">What will this include?</div>
-        <h2>A real-world AI literacy experience built for this era</h2>
-        <p>This program is built to help people understand what AI actually is, how it is already shaping school, work, creativity, and opportunity, and how to move with intention instead of fear. The focus is not hype. The focus is readiness.</p>
-      </article>
-
-      <article class="card full" style="padding-top:24px;padding-bottom:24px;">
-        <div class="tag">Contact</div>
-        <h2 style="margin-bottom:8px;">Nasirr Mayo</h2>
-        <p style="margin-bottom:14px;color:var(--blue-bright);font-weight:700;letter-spacing:0.4px;">FOUNDER & LEAD INSTRUCTOR, INNERG INTEL</p>
-        <div class="info-list" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
-          <div class="info-item">
-            <strong>Phone</strong>
-            <span>267-473-0397</span>
-          </div>
-          <div class="info-item">
-            <strong>Email</strong>
-            <span>nasirr@innergintel.org</span>
-          </div>
-          <div class="info-item">
-            <strong>Organization</strong>
-            <span>InnerG Intel</span>
-          </div>
-          <div class="info-item">
-            <strong>YouTube</strong>
-            <a href="https://www.youtube.com/@innergintel" target="_blank" rel="noopener noreferrer">@innergintel</a>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <div class="page-footer" style="
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    ">
-      <p style="color: var(--muted); font-size: 0.88rem;">Instructor: <a href="mailto:nasirr@innergintel.org" style="color: var(--blue-bright); text-decoration: none; font-weight: 600;">Nasirr Mayo</a> · InnerG Intel</p>
-      <p style="margin: 0;"><a href="curriculum.html" style="
-        color: var(--blue-bright);
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 0.88rem;
-      ">View Full Curriculum →</a></p>
+      <form id="school-form" style="display:grid; gap:14px;">
+        <input class="form-input" type="text" name="name" placeholder="Your name" required>
+        <input class="form-input" type="email" name="email" placeholder="Email address" required>
+        <input class="form-input" type="text" name="organization" placeholder="School or organization">
+        <textarea class="form-input" name="message" rows="3" placeholder="Tell us about your group and what you're looking for..."></textarea>
+        <button class="btn btn-yellow" type="submit" style="width:100%;">Request Free Session</button>
+        <p id="school-status" style="text-align:center; font-size:0.85rem; margin-top:4px;"></p>
+      </form>
     </div>
-  </main>
+  </div>
 
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
-
+  <!-- ==================== SCRIPTS ==================== -->
   <script>
-    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xwvylgop';
+    // Generate stars
+    (function() {
+      var c = document.getElementById('stars');
+      for (var i = 0; i < 120; i++) {
+        var s = document.createElement('div');
+        s.className = 'star';
+        s.style.left = Math.random() * 100 + '%';
+        s.style.top = Math.random() * 70 + '%';
+        s.style.animationDelay = (Math.random() * 3) + 's';
+        s.style.width = s.style.height = (Math.random() * 2 + 1) + 'px';
+        c.appendChild(s);
+      }
+    })();
 
-    async function submitForm(formId, statusId) {
-      const form = document.getElementById(formId);
-      const status = document.getElementById(statusId);
+    // Modals
+    function openModal(type) {
+      document.getElementById('modal-' + type).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(type) {
+      document.getElementById('modal-' + type).classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    // Close on overlay click
+    document.querySelectorAll('.modal-overlay').forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        if (e.target === el) {
+          el.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
 
-      form.addEventListener('submit', async (e) => {
+    // Form submission
+    var FORMSPREE_ENDPOINT = 'https://formspree.io/f/xwvylgop';
+
+    function setupForm(formId, statusId) {
+      var form = document.getElementById(formId);
+      var status = document.getElementById(statusId);
+
+      form.addEventListener('submit', function(e) {
         e.preventDefault();
         status.textContent = 'Sending...';
-        status.style.color = '#6fd1ff';
+        status.style.color = 'var(--cyan)';
 
-        const data = new FormData(form);
+        var data = new FormData(form);
+        var obj = {};
+        data.forEach(function(v, k) { obj[k] = v; });
+        obj.form_type = formId === 'public-form' ? 'Program Signup' : 'Free Session Request';
 
-        try {
-          const res = await fetch(FORMSPREE_ENDPOINT, {
-            method: 'POST',
-            body: data,
-            headers: { 'Accept': 'application/json' }
-          });
-
-          const result = await res.json().catch(() => ({}));
-
+        fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(obj)
+        }).then(function(res) {
           if (res.ok) {
-            form.reset();
-            status.textContent = 'Done. Your information was sent successfully.';
+            status.textContent = '✓ You\'re in! We\'ll be in touch soon.';
             status.style.color = '#7cf7bf';
+            form.reset();
           } else {
-            status.textContent = result.errors?.[0]?.message || 'Something went wrong. Please try again.';
-            status.style.color = '#ff8b8b';
+            status.textContent = 'Something went wrong. Please try again.';
+            status.style.color = '#ff6b6b';
           }
-        } catch (err) {
-          status.textContent = 'Network issue. Please try again.';
-          status.style.color = '#ff8b8b';
-        }
+        }).catch(function() {
+          status.textContent = 'Network error. Please try again.';
+          status.style.color = '#ff6b6b';
+        });
       });
     }
 
-    submitForm('public-form', 'public-status');
-    submitForm('school-form', 'school-status');
-
-    const toggle = document.getElementById('mobileToggle');
-    const menu = document.getElementById('mobileMenu');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('open');
-    });
-
-    // Back to top button
-    const btt = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      btt.classList.toggle('visible', window.scrollY > 400);
-    });
-    btt.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    setupForm('public-form', 'public-status');
+    setupForm('school-form', 'school-status');
   </script>
+
 </body>
 </html>
