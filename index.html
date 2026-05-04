@@ -199,25 +199,27 @@
 
     /* Starburst badge */
     .starburst {
-      display: inline-block;
-      padding: 10px 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       font-family: 'Orbitron', sans-serif;
       font-weight: 800;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       letter-spacing: 1px;
       text-transform: uppercase;
       color: #0a0a2e;
       background: var(--yellow);
-      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      border-radius: 50%;
       width: 140px;
       height: 140px;
-      line-height: 140px;
       text-align: center;
       position: relative;
+      box-shadow: 0 0 25px rgba(255,230,0,0.3);
     }
     .starburst-alt {
       background: var(--neon-pink);
       color: white;
+      box-shadow: 0 0 25px rgba(255,43,214,0.3);
     }
 
     /* CRT monitor */
@@ -671,10 +673,10 @@
       <!-- Starbursts -->
       <div style="display:flex; justify-content:center; gap:40px; flex-wrap:wrap; align-items:center;" class="cta-stars">
         <div style="text-align:center;">
-          <div class="starburst" style="display:flex; align-items:center; justify-content:center; line-height:1.3; padding-top:35px;">FREE<br>SESSION</div>
+          <div class="starburst">FREE<br>SESSION</div>
         </div>
         <div style="text-align:center;">
-          <div class="starburst starburst-alt" style="display:flex; align-items:center; justify-content:center; line-height:1.3; padding-top:30px;">AI SKILLS<br>FOR THE<br>NEXT GEN</div>
+          <div class="starburst starburst-alt">AI SKILLS<br>FOR THE<br>NEXT GEN</div>
         </div>
       </div>
     </div>
