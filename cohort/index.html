@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F3EBDD">
+  <title>Coming for your job? ~ InnerG Intel</title>
+  <meta name="description" content="Not if you learn to direct it. Join the first cohort of hands-on classes on bots, agents and automations for people on the job. Philadelphia and beyond.">
+  <meta property="og:title" content="Coming for your job?">
+  <meta property="og:description" content="Not if you learn to direct it. First cohort of hands-on classes on bots, agents and automations.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://innergclaw.github.io/innerg-ai-program-signup/cohort/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%23F3EBDD' width='32' height='32'/%3E%3Ccircle fill='%239E2B25' cx='16' cy='16' r='7'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,SOFT,wght,WONK@9..144,0..100,500..900,0..1&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #F3EBDD;
+      --ink: #1E1414;
+      --red: #9E2B25;
+      --red-deep: #7E221E;
+      --quiet: #5C463E;
+      --line: #cbbbaa;
+      --serif: "Fraunces", "Iowan Old Style", Palatino, "Palatino Linotype", serif;
+      --text: "Cormorant Garamond", Palatino, "Palatino Linotype", serif;
+      --mono: "Courier Prime", "Courier New", Courier, monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scrollbar-color: var(--ink) var(--paper);
+      scroll-behavior: smooth;
+    }
+
+    html::-webkit-scrollbar { width: 12px; }
+    html::-webkit-scrollbar-track { background: var(--paper); }
+    html::-webkit-scrollbar-thumb { background: var(--ink); }
+
+    ::selection {
+      background: var(--red);
+      color: var(--paper);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100dvh;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--text);
+      font-weight: 500;
+      font-size: 1.25rem;
+      line-height: 1.45;
+      caret-color: var(--red);
+      text-rendering: optimizeLegibility;
+      padding:
+        env(safe-area-inset-top)
+        env(safe-area-inset-right)
+        env(safe-area-inset-bottom)
+        env(safe-area-inset-left);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 4;
+      opacity: 0.16;
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      background-size: 180px 180px;
+    }
+
+    .crop {
+      position: fixed;
+      width: 14px;
+      height: 14px;
+      z-index: 3;
+      pointer-events: none;
+      border-color: var(--ink);
+      border-style: solid;
+      opacity: 0.45;
+    }
+    .crop-tl { top: 10px; left: 10px; border-width: 1px 0 0 1px; }
+    .crop-tr { top: 10px; right: 10px; border-width: 1px 1px 0 0; }
+    .crop-bl { bottom: 10px; left: 10px; border-width: 0 0 1px 1px; }
+    .crop-br { bottom: 10px; right: 10px; border-width: 0 1px 1px 0; }
+
+    .screen {
+      position: fixed;
+      z-index: 0;
+      pointer-events: none;
+      width: min(78vw, 640px);
+      height: min(78vw, 640px);
+      right: -12vw;
+      top: -8vh;
+      background-image: radial-gradient(var(--red) 1.05px, transparent 1.15px);
+      background-size: 8px 8px;
+      opacity: 0.22;
+      transform: rotate(-11deg);
+      -webkit-mask-image: radial-gradient(closest-side, #000 30%, transparent 74%);
+      mask-image: radial-gradient(closest-side, #000 30%, transparent 74%);
+    }
+
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: 0;
+      transform: translateY(-120%);
+      background: var(--ink);
+      color: var(--paper);
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      padding: 0.6rem 0.8rem;
+      z-index: 5;
+    }
+    .skip:focus { transform: none; }
+
+    a {
+      color: inherit;
+      text-underline-offset: 0.18em;
+      text-decoration-thickness: 1px;
+    }
+    a:hover { color: var(--red); }
+    .skip:hover,
+    .skip:focus { color: var(--paper); background: var(--red); }
+
+    :focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
+    }
+
+    .sheet {
+      position: relative;
+      z-index: 1;
+      width: min(1080px, calc(100% - 2.5rem));
+      margin: 0 auto;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      padding: 1.35rem 0 2.4rem;
+    }
+
+    .mast {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: baseline;
+      padding-bottom: 0.7rem;
+      border-bottom: 1px solid var(--ink);
+      box-shadow: 0 3px 0 0 var(--red);
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .mast p { margin: 0; }
+
+    .spine {
+      display: none;
+      margin: 0;
+    }
+
+    .spread {
+      flex: 1;
+      display: grid;
+      gap: 2.75rem;
+      padding-top: clamp(2rem, 6vw, 4.25rem);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(3.35rem, 15vw, 5.15rem);
+      font-synthesis: none;
+      font-variation-settings: "SOFT" 28, "WONK" 1, "opsz" 144;
+      line-height: 0.84;
+      letter-spacing: -0.035em;
+      text-wrap: balance;
+    }
+    h1 .for {
+      display: block;
+      margin-top: 0.08em;
+      font-size: 0.58em;
+      font-weight: 560;
+      letter-spacing: -0.03em;
+      line-height: 0.95;
+    }
+    .job {
+      display: block;
+      position: relative;
+      margin-top: 0.08em;
+      font-size: 1.18em;
+      font-weight: 760;
+      line-height: 0.82;
+      letter-spacing: -0.04em;
+      color: var(--red);
+    }
+    .job .plate,
+    .job .face {
+      display: block;
+    }
+    .job .plate {
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--ink);
+      transform: translate(0.034em, 0.026em);
+      animation: settle 1.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .job .face { position: relative; }
+
+    @keyframes settle {
+      from { transform: translate(0.16em, 0.07em); }
+      to { transform: translate(0.034em, 0.026em); }
+    }
+
+    .lede {
+      max-width: 34rem;
+      margin: 1.35rem 0 0;
+      font-size: 1.45rem;
+      line-height: 1.35;
+      text-wrap: pretty;
+    }
+    .lede em {
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    form {
+      margin-top: 1.85rem;
+      max-width: 34rem;
+      border: 1.5px solid var(--ink);
+      padding: 1.15rem 1.1rem 1.2rem;
+      background: rgba(243, 235, 221, 0.55);
+    }
+
+    fieldset {
+      border: none;
+      margin: 0;
+      padding: 0;
+      min-inline-size: 0;
+    }
+
+    legend {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0 0.4rem;
+    }
+
+    .field { margin: 0.85rem 0 0; }
+    .field:first-of-type { margin-top: 0.35rem; }
+
+    label {
+      display: block;
+      margin-bottom: 0.2rem;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    input,
+    select {
+      width: 100%;
+      appearance: none;
+      -webkit-appearance: none;
+      background: transparent;
+      border: none;
+      border-bottom: 1.5px solid var(--ink);
+      border-radius: 0;
+      color: var(--ink);
+      font-family: var(--text);
+      font-size: 1.35rem;
+      font-weight: 500;
+      line-height: 1.3;
+      padding: 0.25rem 0 0.35rem;
+    }
+
+    input::placeholder { color: var(--quiet); opacity: 1; }
+
+    select {
+      cursor: pointer;
+      background-image:
+        linear-gradient(45deg, transparent 50%, var(--ink) 50%),
+        linear-gradient(135deg, var(--ink) 50%, transparent 50%);
+      background-position:
+        calc(100% - 12px) 58%,
+        calc(100% - 6px) 58%;
+      background-size: 6px 6px, 6px 6px;
+      background-repeat: no-repeat;
+      padding-right: 1.6rem;
+    }
+    select:has(option[value=""]:checked) { color: var(--quiet); }
+    select option { color: var(--ink); background: var(--paper); }
+
+    .hp {
+      position: absolute;
+      left: -10000px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      margin-top: 1.15rem;
+      border: none;
+      border-radius: 0;
+      background: var(--red);
+      color: var(--paper);
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0.95rem 1rem;
+      cursor: pointer;
+    }
+    button:hover { background: var(--red-deep); }
+    button:disabled {
+      background: var(--red-deep);
+      cursor: wait;
+    }
+
+    .fine {
+      margin: 0.7rem 0 0;
+      font-family: var(--mono);
+      font-size: 0.875rem;
+      letter-spacing: 0.02em;
+      color: var(--quiet);
+      line-height: 1.4;
+    }
+
+    .error {
+      margin: 0.85rem 0 0;
+      color: var(--red);
+      font-family: var(--text);
+      font-size: 1.15rem;
+      font-style: italic;
+      line-height: 1.3;
+    }
+
+    .result { margin-top: 0.4rem; }
+    .stamp {
+      display: inline-block;
+      margin: 0.2rem 0 0.75rem;
+      padding: 0.35rem 0.55rem 0.28rem;
+      border: 2px solid var(--red);
+      color: var(--red);
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transform: rotate(-2deg);
+      animation: stamp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .result p:last-child {
+      margin: 0;
+      max-width: 28rem;
+      font-size: 1.45rem;
+      line-height: 1.3;
+    }
+
+    @keyframes stamp {
+      from { transform: rotate(-6deg) scale(1.06); opacity: 0; }
+      to { transform: rotate(-2deg) scale(1); opacity: 1; }
+    }
+
+    .learn h2,
+    .who h2 {
+      margin: 0 0 1rem;
+      font-family: var(--serif);
+      font-weight: 620;
+      font-size: clamp(2rem, 5vw, 2.6rem);
+      font-variation-settings: "SOFT" 20, "WONK" 1, "opsz" 72;
+      letter-spacing: -0.03em;
+      line-height: 0.95;
+      text-wrap: balance;
+    }
+
+    .learn ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .learn li {
+      padding: 0.95rem 0 1.05rem;
+      border-top: 1px solid var(--line);
+    }
+    .learn li:last-child { border-bottom: 1px solid var(--line); }
+    .learn h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-weight: 650;
+      font-size: 1.55rem;
+      letter-spacing: -0.025em;
+      line-height: 1.05;
+      font-variation-settings: "SOFT" 18, "opsz" 48;
+    }
+    .mark {
+      display: inline-block;
+      width: 0.48rem;
+      height: 0.48rem;
+      margin-right: 0.55rem;
+      background: var(--ink);
+      transform: translateY(-0.08em);
+      position: relative;
+      vertical-align: baseline;
+    }
+    .mark::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--red);
+      transform: translate(2px, -2px);
+    }
+    .learn p {
+      margin: 0.35rem 0 0;
+      max-width: 36rem;
+      font-size: 1.22rem;
+      line-height: 1.35;
+      text-wrap: pretty;
+    }
+
+    .who {
+      padding-top: 0.25rem;
+    }
+    .who p {
+      margin: 0;
+      max-width: 40rem;
+      font-size: 1.4rem;
+      line-height: 1.35;
+      text-wrap: pretty;
+    }
+
+    footer {
+      margin-top: 3.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--ink);
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    footer p { margin: 0.4rem 0; }
+    footer .tag {
+      font-family: var(--mono);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 0.82rem;
+      letter-spacing: 0.01em;
+      text-transform: none;
+      color: var(--ink);
+      line-height: 1.45;
+    }
+
+    @media (min-width: 880px) {
+      .sheet { width: min(1080px, calc(100% - 6rem)); }
+      .spread {
+        grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+        column-gap: 4rem;
+        row-gap: 3rem;
+        align-items: start;
+      }
+      .pitch { grid-column: 1; grid-row: 1; }
+      .learn {
+        grid-column: 2;
+        grid-row: 1;
+        padding-top: 0.35rem;
+      }
+      .who { grid-column: 1 / -1; }
+      .lede { font-size: 1.55rem; }
+    }
+
+    @media (min-width: 1240px) {
+      .spine {
+        display: block;
+        position: absolute;
+        left: -2.35rem;
+        top: 7.5rem;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+    }
+
+    @media (max-width: 359px) {
+      h1 { font-size: 2.85rem; }
+      .lede, .result p:last-child, .who p { font-size: 1.25rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .job .plate,
+      .stamp { animation: none; }
+    }
+
+    @media print {
+      body::before, .screen, .crop { display: none; }
+      .job .plate { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="screen" aria-hidden="true"></div>
+  <span class="crop crop-tl" aria-hidden="true"></span>
+  <span class="crop crop-tr" aria-hidden="true"></span>
+  <span class="crop crop-bl" aria-hidden="true"></span>
+  <span class="crop crop-br" aria-hidden="true"></span>
+  <a class="skip" href="#join">Skip to the list</a>
+
+  <div class="sheet">
+    <header class="mast">
+      <p>InnerG Intel</p>
+      <p>First cohort</p>
+    </header>
+    <p class="spine">Philadelphia</p>
+
+    <div class="spread">
+      <div class="pitch">
+        <h1>
+          <span>Coming</span>
+          <span class="for">for your</span>
+          <span class="job">
+            <span class="plate" aria-hidden="true">JOB?</span>
+            <span class="face">JOB?</span>
+          </span>
+        </h1>
+        <p class="lede"><em>Not if you learn to direct it.</em> Join the first cohort of hands-on classes on bots, agents and automations for people on the job.</p>
+
+        <form id="join" novalidate>
+          <fieldset>
+            <legend>The first call</legend>
+            <div class="hp" aria-hidden="true">
+              <label for="company">Company site</label>
+              <input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div id="fields">
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="none" autocorrect="off" spellcheck="false" maxlength="254" required>
+              </div>
+              <div class="field">
+                <label for="first-name">First name, optional</label>
+                <input id="first-name" name="first_name" type="text" autocomplete="given-name" maxlength="80">
+              </div>
+              <div class="field">
+                <label for="role">Role, optional</label>
+                <select id="role" name="role">
+                  <option value="">Choose one</option>
+                  <option>HR</option>
+                  <option>Manager</option>
+                  <option>Executive</option>
+                  <option>Administrator</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <button type="submit" id="submit">Notify me</button>
+              <p class="fine">One note, when the first cohort opens.</p>
+            </div>
+
+            <div class="result" id="result" role="status" hidden tabindex="-1">
+              <p class="stamp" id="stamp"></p>
+              <p id="result-copy"></p>
+            </div>
+            <p class="error" id="error" role="alert" hidden></p>
+          </fieldset>
+        </form>
+        <noscript>
+          <p class="fine">Scripts are off, so the list cannot take an email from this page. Reach InnerG Intel on YouTube.</p>
+        </noscript>
+      </div>
+
+      <section class="learn" aria-labelledby="learn-title">
+        <h2 id="learn-title">What you will learn</h2>
+        <ol>
+          <li>
+            <h3><span class="mark" aria-hidden="true"></span>Clear the repeat work</h3>
+            <p>Inbox, meetings, and the mail that repeats. Bots and agents take that loop. You keep the judgment.</p>
+          </li>
+          <li>
+            <h3><span class="mark" aria-hidden="true"></span>Build your own automations</h3>
+            <p>Hands-on, in class. You build systems you can run on the job.</p>
+          </li>
+          <li>
+            <h3><span class="mark" aria-hidden="true"></span>Work smarter and get time back</h3>
+            <p>A cleaner day at work. More of the evening at home with your family.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="who" aria-labelledby="who-title">
+        <h2 id="who-title">Who it is for</h2>
+        <p>HR, managers, executives, administrators, and the people who keep a company moving. In Philadelphia, and beyond.</p>
+      </section>
+    </div>
+
+    <footer>
+      <p><a href="https://www.youtube.com/@innergintel">INNERG INTEL</a> • 2026</p>
+      <p class="tag">Learn the system. Recode the mind. Build the future.</p>
+      <p><a href="https://www.youtube.com/@innergintel">#ROADTO1000</a></p>
+    </footer>
+  </div>
+
+  <script>
+    const SUPABASE_URL = "https://zkyhhoxcrjkhywblzehr.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpreWhob3hjcmpraHl3Ymx6ZWhyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg0NjYyMDEsImV4cCI6MjA5NDA0MjIwMX0.uWSzaSF_EplYCFNMIAhF5hzTun2gFpW8ddmJ_wWCmm4";
+
+    const form = document.getElementById("join");
+    const fields = document.getElementById("fields");
+    const result = document.getElementById("result");
+    const stamp = document.getElementById("stamp");
+    const resultCopy = document.getElementById("result-copy");
+    const errorEl = document.getElementById("error");
+    const submitBtn = document.getElementById("submit");
+
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    function showError(message) {
+      errorEl.hidden = false;
+      errorEl.textContent = message;
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Notify me";
+    }
+
+    function showSuccess(stampText, message) {
+      errorEl.hidden = true;
+      fields.hidden = true;
+      stamp.textContent = stampText;
+      resultCopy.textContent = message;
+      result.hidden = false;
+      result.focus();
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      errorEl.hidden = true;
+
+      if (document.getElementById("company").value) {
+        showSuccess("On the list", "You are on the list. We will email you when the first cohort opens.");
+        return;
+      }
+
+      const email = document.getElementById("email").value.trim().toLowerCase();
+      const firstName = document.getElementById("first-name").value.trim();
+      const role = document.getElementById("role").value;
+
+      const emailInput = document.getElementById("email");
+      emailInput.removeAttribute("aria-invalid");
+      if (!email) {
+        emailInput.setAttribute("aria-invalid", "true");
+        showError("Email is required.");
+        emailInput.focus();
+        return;
+      }
+      if (email.length < 5 || email.length > 254 || !EMAIL_RE.test(email)) {
+        emailInput.setAttribute("aria-invalid", "true");
+        showError("Enter a real email address.");
+        emailInput.focus();
+        return;
+      }
+
+      const payload = { email, source: "cohort-landing" };
+      if (firstName) payload.first_name = firstName.slice(0, 80);
+      if (role) payload.role = role;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending";
+
+      try {
+        const response = await fetch(SUPABASE_URL + "/rest/v1/cohort_waitlist", {
+          method: "POST",
+          headers: {
+            apikey: SUPABASE_ANON_KEY,
+            Authorization: "Bearer " + SUPABASE_ANON_KEY,
+            "Content-Type": "application/json",
+            Prefer: "return=minimal"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          showSuccess("On the list", "You are on the list. We will email you when the first cohort opens.");
+          return;
+        }
+        if (response.status === 409) {
+          showSuccess("Already listed", "You are already on the list.");
+          return;
+        }
+        if (response.status === 400) {
+          showError("That email was not accepted. Check it and try again.");
+          return;
+        }
+        showError("Something went wrong. Try again in a moment.");
+      } catch (err) {
+        showError("We could not reach the list. Try again in a moment.");
+      }
+    });
+  </script>
+</body>
+</html>
